@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "60c90c84f859951b172cd4a1"
+  },
+  "num_doc": "12345678",
+  "name": "Juan",
+  "lastname": "Perez",
+  "num_phone": "12457896",
+  "address": "",
+  "type_person": "",
+  "name_social": ""
+},{
+  "_id": {
+    "$oid": "60c90e83b12bd140c449fdcb"
+  },
+  "num_doc": "10101010",
+  "name": "Pedro",
+  "lastname": "Suarez",
+  "num_phone": "963852747",
+  "address": "",
+  "type_person": "",
+  "name_social": ""
+}]
