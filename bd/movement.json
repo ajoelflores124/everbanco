@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "60c91a6ef859951b172cd4ab"
+  },
+  "num_mov": "",
+  "id_person": "",
+  "num_request": "",
+  "type_mov": "",
+  "date_tran": {
+    "$date": "2020-12-12T05:00:00Z"
+  },
+  "amount": ""
+}]
