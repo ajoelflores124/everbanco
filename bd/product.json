@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "60c9392c7c97c905fe1311d1"
+  },
+  "name_prodcut": "Ahorro",
+  "type_product": "P",
+  "description": "libre de comisión por mantenimiento y con un límite máximo de movimientos mensuales.",
+  "free_commission": true,
+  "limit_mov": 1,
+  "cant_credit": 0
+},{
+  "_id": {
+    "$oid": "60c93a29eccd2e110cefad43"
+  },
+  "name_prodcut": "Cuenta Corriente",
+  "type_product": "A",
+  "description": "\"posee comisión de mantenimiento y sin límite de movimientos mensuales.\"",
+  "free_commission": true,
+  "limit_mov": 999,
+  "cant_credit": 1
+}]
