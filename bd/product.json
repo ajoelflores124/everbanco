@@ -1,21 +1,49 @@
 [{
   "_id": {
-    "$oid": "60c9392c7c97c905fe1311d1"
+    "$oid": "60ca58dbee7173d95dfd1526"
   },
-  "name_prodcut": "Ahorro",
-  "type_product": "P",
-  "description": "libre de comisión por mantenimiento y con un límite máximo de movimientos mensuales.",
-  "free_commission": true,
+  "id_product": "100",
+  "name_product": "Ahorro",
+  "type_product": "Pasivo",
+  "description": "Libre de comisión",
+  "free_comission": true,
   "limit_mov": 1,
-  "cant_credit": 0
+  "credit": null,
+  "status": 1
 },{
   "_id": {
-    "$oid": "60c93a29eccd2e110cefad43"
+    "$oid": "60ca5a91de372d47741ccc03"
   },
-  "name_prodcut": "Cuenta Corriente",
-  "type_product": "A",
-  "description": "\"posee comisión de mantenimiento y sin límite de movimientos mensuales.\"",
-  "free_commission": true,
+  "id_product": "200",
+  "name_product": "Cuenta Corriente",
+  "type_product": "Pasivo",
+  "description": "Posee de comisión",
+  "free_comission": false,
   "limit_mov": 999,
-  "cant_credit": 1
+  "credit": null,
+  "status": 1
+},{
+  "_id": {
+    "$oid": "60ca5cf5de372d47741ccc05"
+  },
+  "id_product": "300",
+  "name_product": "Plazo fijo",
+  "type_product": "Pasivo",
+  "description": "libre de comisión por mantenimiento, solo permite un movimiento de retiro o depósito en un día específico del mes.",
+  "free_comission": true,
+  "limit_mov": 1,
+  "credit": null,
+  "status": 1
+},{
+  "_id": {
+    "$oid": "60ca5e6eee7173d95dfd152a"
+  },
+  "id_product": "400",
+  "name_product": "Personal",
+  "type_product": "Activo",
+  "descripcion": "solo se permite un solo crédito por persona",
+  "free_comission": false,
+  "limit_mov": null,
+  "credit": 1,
+  "status": 1
 }]
