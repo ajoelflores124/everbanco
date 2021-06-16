@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "60ca36ec5b600752a5d404d6"
+  },
+  "date_tra": {
+    "$date": "2021-06-14T05:00:00Z"
+  },
+  "num_account": "10000000001",
+  "type_tra": "M,P,C",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "movement": [
+    {
+      "type_mov": "D",
+      "date_mov": {
+        "$date": "2021-06-14T05:00:00Z"
+      },
+      "amount": 1000.5
+    },
+    {
+      "type_mov": "R",
+      "date_mov": {
+        "$date": "2021-06-15T05:00:00Z"
+      },
+      "amount_mov": 500.5
+    }
+  ],
+  "payment": [
+    {
+      "date_pay": {
+        "$date": "2021-06-15T05:00:00Z"
+      },
+      "amount_pay": 100.5,
+      "desc_pay": "Pago de tarjeta de credito del mes de Junio"
+    }
+  ],
+  "consumption": [
+    {
+      "date_con": {
+        "$date": "2021-06-14T05:00:00Z"
+      },
+      "amount_con": "150.99",
+      "desc_con": "Compras en supermercado Mass"
+    }
+  ],
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Juan",
+    "lastname": "Perez",
+    "type_customer": "P,E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname": "Dias Dias",
+      "type_rep": "T,F"
+    }
+  ],
+  "desc_tra": "apertura de cuenta de ahorros",
+  "status": 1
+}]
