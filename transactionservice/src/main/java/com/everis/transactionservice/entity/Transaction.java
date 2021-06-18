@@ -41,6 +41,7 @@ public class Transaction implements Serializable {
     private Consumption[] consumption;
     private Customer customer;
     private Representative[] representatives;
+    private Product product;
     @Field(name = "desc_tra")
     private String descTra;
     private long status;
