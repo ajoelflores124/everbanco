@@ -59,5 +59,111 @@
     }
   ],
   "desc_tra": "apertura de cuenta de ahorros",
-  "status": 1
+  "status": 1,
+  "product": {
+    "id_product": "100",
+    "name_product": "Ahorro",
+    "type_product": "Pasivo"
+  }
+},{
+  "_id": {
+    "$oid": "60cbfb4cbe419c0cc9cc706e"
+  },
+  "date_tra": {
+    "$date": "2021-06-17T05:00:00Z"
+  },
+  "num_account": "10000000003",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Hugo",
+    "lastname": "Campos Campos",
+    "type_customer": "P"
+  },
+  "desc_tra": "apertura de cuenta corriente editado3",
+  "status": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": "60cbfb4cbe419c0cc9cc706e__",
+  "date_tra": {
+    "$date": "2021-06-17T05:00:00Z"
+  },
+  "num_account": "10000000003",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Hugo",
+    "lastname": "Campos Campos",
+    "type_customer": "P"
+  },
+  "desc_tra": "apertura de cuenta corriente editado2",
+  "status": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": "60cbfb4cbe419c0cc9cc706e__000",
+  "date_tra": {
+    "$date": "2021-06-17T05:00:00Z"
+  },
+  "num_account": "10000000003",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Hugo",
+    "lastname": "Campos Campos",
+    "type_customer": "P"
+  },
+  "desc_tra": "apertura de cuenta corriente editado2",
+  "status": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60ccdf1a15d7823f3a620480"
+  },
+  "date_tra": {
+    "$date": "2021-06-17T05:00:00Z"
+  },
+  "num_account": "10000000004",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Juan carlos",
+    "lastname": "Campos Campos",
+    "type_customer": "P"
+  },
+  "desc_tra": "apertura de cuenta corriente editado2",
+  "status": 0,
+  "_class": "com.everis.saleservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60cce1b0536d126ccecc3e8f"
+  },
+  "date_tra": {
+    "$date": "2021-06-17T05:00:00Z"
+  },
+  "num_account": "10000000004",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Juan carlos",
+    "lastname": "Campos Campos",
+    "type_customer": "P"
+  },
+  "desc_tra": "apertura de cuenta corriente editado2",
+  "status": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
 }]
