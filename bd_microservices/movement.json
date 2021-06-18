@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "60ccf7b221bade1d3fb7110d"
+  },
+  "num_doc": "12354678",
+  "description": "Ahorro",
+  "num_account": "10101010",
+  "amount": 1000,
+  "date": {
+    "$date": "2021-06-18T05:00:00Z"
+  },
+  "type_mov": "R",
+  "status": 1
+}]

@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "60ccf7b221bade1d3fb7110d"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Junio",
+  "status": 1,
+  "amount_pay": 1000,
+  "date_pay": {
+    "$date": "2021-06-18T05:00:00Z"
+  },
+  "num_tra": 1
+}]
