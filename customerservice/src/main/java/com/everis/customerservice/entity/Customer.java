@@ -2,6 +2,7 @@ package com.everis.customerservice.entity;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -18,7 +19,11 @@ public class Customer implements Serializable {
 	/**
 	 * 
 	 */
+	
 	private static final long serialVersionUID = 6679096560556364353L;
+	
+	@Id
+	private String id;
 	@Field (name = "num_doc")
     private String numDoc;
     private String name;

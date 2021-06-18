@@ -24,27 +24,27 @@ public class CustomerController {
 	private CustomerService customerService;
 	
 	@GetMapping
-	public Flux<Customer> getTransactions(){
-		return customerService.getTransactions();
+	public Flux<Customer> getCustomers(){
+		return customerService.getCustomers();
 	}
 	
 	@GetMapping("/{id}")
-	public Mono<Customer> getTransaction(@PathVariable String id){
-		return customerService.getTransacion(id);
+	public Mono<Customer> getCustomer(@PathVariable String id){
+		return customerService.getCustomer(id);
 	}
 	
 	@PostMapping
-	public Mono<Customer> saveProduct(@RequestBody Customer customerMono){
-		return customerService.saveTransaction(customerMono);
+	public Mono<Customer> saveCustomer(@RequestBody Customer customerMono){
+		return customerService.saveCustomer(customerMono);
 	}
 	
 	@PutMapping
-	public Mono<Customer> updateTransaction(@RequestBody Customer customerMono){
-		return customerService.updateTransaction(customerMono);
+	public Mono<Customer> updateCustomer(@RequestBody Customer customerMono){
+		return customerService.updateCustomer(customerMono);
 	}
 	
 	@DeleteMapping("/{id}")
-	public Mono<Void> deleteTransaction(@PathVariable String id){
-		return customerService.deleteTransaction(id);
+	public Mono<Void> deleteCustomer(@PathVariable String id){
+		return customerService.deleteCustomer(id);
 	}
 }
