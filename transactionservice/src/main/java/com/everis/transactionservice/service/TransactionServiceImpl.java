@@ -3,7 +3,16 @@ package com.everis.transactionservice.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.everis.transactionservice.entity.Customer;
 import com.everis.transactionservice.entity.Transaction;
 import com.everis.transactionservice.exception.EntityNotFoundException;
 import com.everis.transactionservice.repository.ITransactionRepository;
@@ -17,7 +26,7 @@ import reactor.core.publisher.Mono;
  */
 @PropertySource("classpath:application.properties")
 @Service
-public class TransactionService {
+public class TransactionServiceImpl implements ITransactionService {
 
 	
 	/**
@@ -26,31 +35,45 @@ public class TransactionService {
 	@Value("${msg.error.registro.notfound}")
 	private String msgNotFound;
 	
+	@Value("${url.customer.service}")
+	private String urlCustomerService;
+	
 	
 	@Autowired
 	private ITransactionRepository transactionRep;
+	private final ReactiveMongoTemplate mongoTemplate;
+
+    @Autowired
+    public TransactionServiceImpl(ReactiveMongoTemplate mongoTemplate) {
+        this.mongoTemplate = mongoTemplate;
+    }
+    
+    WebClient webClient = WebClient.create(urlCustomerService);
 	
-	public Flux<Transaction> getTransactions(){
+	@Override
+	public Flux<Transaction> findAll() {
 		return transactionRep.findAll();
 	}
-	
-	public Mono<Transaction> getTransacion(String id){
+
+	@Override
+	public Mono<Transaction> findEntityById(String id) {
 		return transactionRep.findById(id);
 	}
-	
-	public Mono<Transaction> saveTransaction(Transaction transaction){
-		return transactionRep.insert(transaction);
+
+	@Override
+	public Mono<Transaction> createEntity(Transaction transaction) {
+	   return transactionRep.insert(transaction);
 	}
-	
-	public Mono<Transaction> updateTransaction(Transaction transaction){
-		
+
+	@Override
+	public Mono<Transaction> updateEntity(Transaction transaction) {
 		return  transactionRep.findById(transaction.getId())
 				 .switchIfEmpty(Mono.error( new EntityNotFoundException(msgNotFound) ))
 				 .flatMap(item-> transactionRep.save(transaction));
 	}
 
-	public Mono<Void> deleteTransaction(String id){
-		
+	@Override
+	public Mono<Void> deleteEntity(String id) {
 		return  transactionRep.findById(id)
 				 .switchIfEmpty(Mono.error( new EntityNotFoundException(msgNotFound) ))
 				 .flatMap(item-> transactionRep.deleteById(id));

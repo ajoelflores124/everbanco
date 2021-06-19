@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.everis.transactionservice.entity.Transaction;
-import com.everis.transactionservice.service.TransactionService;
+import com.everis.transactionservice.service.ITransactionService;
+import com.everis.transactionservice.service.TransactionServiceImpl;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -25,31 +26,31 @@ import reactor.core.publisher.Mono;
 public class TransactionController {
 	
 	@Autowired
-	private TransactionService transactionService;
+	private ITransactionService transactionService;
 	
 	@GetMapping
 	public Flux<Transaction> getTransactions(){
-		return transactionService.getTransactions();
+		return transactionService.findAll();
 	}
 	
 	@GetMapping("/{id}")
 	public Mono<Transaction> getTransaction(@PathVariable String id){
-		return transactionService.getTransacion(id);
+		return transactionService.findEntityById(id);
 	}
 	
 	@PostMapping
 	public Mono<Transaction> saveProduct(@RequestBody Transaction transactionMono){
-		return transactionService.saveTransaction(transactionMono);
+		return transactionService.createEntity(transactionMono);
 	}
 	
 	@PutMapping
 	public Mono<Transaction> updateTransaction(@RequestBody Transaction transactionMono){
-		return transactionService.updateTransaction(transactionMono);
+		return transactionService.updateEntity(transactionMono);
 	}
 		
 	@DeleteMapping("/{id}")
 	public Mono<Void> deleteTransaction(@PathVariable String id){
-		return transactionService.deleteTransaction(id);
+		return transactionService.deleteEntity(id);
 	}
 
 }
