@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.everis.customerservice.entity.Customer;
-import com.everis.customerservice.service.CustomerService;
+import com.everis.customerservice.service.CustomerServiceImpl;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -21,30 +21,30 @@ import reactor.core.publisher.Mono;
 public class CustomerController {
 
 	@Autowired
-	private CustomerService customerService;
+	private CustomerServiceImpl customerService;
 	
 	@GetMapping
 	public Flux<Customer> getCustomers(){
-		return customerService.getCustomers();
+		return customerService.findAll();
 	}
 	
 	@GetMapping("/{id}")
 	public Mono<Customer> getCustomer(@PathVariable String id){
-		return customerService.getCustomer(id);
+		return customerService.findEntityById(id);
 	}
 	
 	@PostMapping
 	public Mono<Customer> saveCustomer(@RequestBody Customer customerMono){
-		return customerService.saveCustomer(customerMono);
+		return customerService.createEntity(customerMono);
 	}
 	
 	@PutMapping
 	public Mono<Customer> updateCustomer(@RequestBody Customer customerMono){
-		return customerService.updateCustomer(customerMono);
+		return customerService.updateEntity(customerMono);
 	}
 	
 	@DeleteMapping("/{id}")
 	public Mono<Void> deleteCustomer(@PathVariable String id){
-		return customerService.deleteCustomer(id);
+		return customerService.deleteEntity(id);
 	}
 }
