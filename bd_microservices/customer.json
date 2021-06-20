@@ -10,4 +10,82 @@
   "address": "Dir. A,B,C #234 Lima",
   "status": 1,
   "type_customer": "P,E"
+},{
+  "_id": {
+    "$oid": "60cebb0cc4c8d4708f48cdc0"
+  },
+  "num_doc": "30303030",
+  "name": "Alexander",
+  "lastname": "Ruiz",
+  "phone": "963852741",
+  "email": "aruiz@gmail.com",
+  "address": "San isidro Lima",
+  "status": 1,
+  "type_customer": "P",
+  "_class": "com.everis.customerservice.entity.Customer"
+},{
+  "_id": {
+    "$oid": "60cebb9ec4c8d4708f48cdc1"
+  },
+  "num_doc": "10101010",
+  "name": "Jorge",
+  "lastname": "Lopez",
+  "phone": "951963852",
+  "email": "jlopez@gmail.com",
+  "address": "San Borja Lima",
+  "status": 1,
+  "type_customer": "P",
+  "_class": "com.everis.customerservice.entity.Customer"
+},{
+  "_id": {
+    "$oid": "60cebbc2c4c8d4708f48cdc2"
+  },
+  "num_doc": "20202020",
+  "name": "Juan",
+  "lastname": "Zurita",
+  "phone": "963852963",
+  "email": "jzurita@gmail.com",
+  "address": "San Isidro Lima",
+  "status": 1,
+  "type_customer": "P",
+  "_class": "com.everis.customerservice.entity.Customer"
+},{
+  "_id": {
+    "$oid": "60cebc22c4c8d4708f48cdc3"
+  },
+  "num_doc": "10202020200",
+  "name": "Sheraton",
+  "lastname": "Hotel",
+  "phone": "987654321",
+  "email": "sheratonhotel@gmail.com",
+  "address": "San Isidro Lima",
+  "status": 1,
+  "type_customer": "E",
+  "_class": "com.everis.customerservice.entity.Customer"
+},{
+  "_id": {
+    "$oid": "60cebc61c4c8d4708f48cdc4"
+  },
+  "num_doc": "20101010100",
+  "name": "Delfines",
+  "lastname": "Hotel",
+  "phone": "935796385",
+  "email": "dhotel@gmail.com",
+  "address": "Miraflores Lima",
+  "status": 1,
+  "type_customer": "E",
+  "_class": "com.everis.customerservice.entity.Customer"
+},{
+  "_id": {
+    "$oid": "60cebe58c4c8d4708f48cdc5"
+  },
+  "num_doc": "20303030300",
+  "name": "Rosatel",
+  "lastname": "Floreria",
+  "phone": "941526378",
+  "email": "rosatelperu@gmail.com",
+  "address": "La Molina Lima",
+  "status": 1,
+  "type_customer": "E",
+  "_class": "com.everis.customerservice.entity.Customer"
 }]
