@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.everis.creditcardservice.entity.Creditcard;
-import com.everis.creditcardservice.service.CreditcardService;
+import com.everis.creditcardservice.service.CreditcardServiceImpl;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -22,30 +22,30 @@ import reactor.core.publisher.Mono;
 public class CredictcardController {
 
 	@Autowired
-	private CreditcardService creditcardService;
+	private CreditcardServiceImpl creditcardService;
 	
 	@GetMapping
-	public Flux<Creditcard> getCreditcards(){
-		return creditcardService.getCreditcards();
+	public Flux<Creditcard> getCreditcard(){
+		return creditcardService.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public Mono<Creditcard> getCreditcard(@PathVariable String id){
-		return creditcardService.getCreditcard(id);
+	public Mono<Creditcard> getCredit(@PathVariable String id){
+		return creditcardService.findEntityById(id);
 	}
 	
 	@PostMapping
-	public Mono<Creditcard> saveCreditcard(@RequestBody Creditcard creditcardMono){
-		return creditcardService.saveCreditcard(creditcardMono);
+	public Mono<Creditcard> saveCredit(@RequestBody Creditcard CreditcardMono){
+		return creditcardService.createEntity(CreditcardMono);
 	}
 	
 	@PutMapping
-	public Mono<Creditcard> updateCreditcard(@RequestBody Creditcard creditcardMono){
-		return creditcardService.updateCreditcard(creditcardMono);
+	public Mono<Creditcard> updateCredit(@RequestBody Creditcard CreditcardMono){
+		return creditcardService.updateEntity(CreditcardMono);
 	}
 		
 	@DeleteMapping("/{id}")
 	public Mono<Void> deleteCreditcard(@PathVariable String id){
-		return creditcardService.deleteCreditcard(id);
+		return creditcardService.deleteEntity(id);
 	}
 }

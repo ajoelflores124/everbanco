@@ -1,6 +1,7 @@
 package com.everis.creditservice.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -27,12 +28,12 @@ public class Credit implements Serializable  {/**
 	private String id;
 	@Field(name = "num_doc")
 	private String numDoc;
-	@Field(name = "commission_free")
-    private boolean commissionFree;
-    private long commission;
     private String description;
-    @Field(name = "limit_mov")
-    private long limitMOV;
-    private String numAccount;
+    private long status;
+    @Field(name = "amount_pay")
+    private long amountPay;
+    @Field(name = "date_pay")
+    private Date datePay;
+    private long numTra;
 	
 }

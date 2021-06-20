@@ -1,8 +1,11 @@
 package com.everis.creditservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import com.everis.creditservice.entity.Credit;
 import com.everis.creditservice.exception.EntityNotFoundException;
@@ -13,34 +16,49 @@ import reactor.core.publisher.Mono;
 
 @PropertySource("classpath:application.properties")
 @Service
-public class CreditService {
+public class CreditServiceImpl implements ICreditService{
 
-private String msgNotFound;
+	@Value("${msg.error.registro.notfound}")
+	private String msgNotFound;
+	
+	@Value("${url.customer.service}")
+	private String urlCustomerService;
 	
 	@Autowired
 	private ICreditRepository creditRep;
+	private final ReactiveMongoTemplate mongoTemplate;
 	
-	public Flux<Credit> getCredits(){
+	@Autowired
+	public CreditServiceImpl(ReactiveMongoTemplate mongoTemplate) {
+        this.mongoTemplate = mongoTemplate;
+    }
+	    
+	WebClient webClient = WebClient.create(urlCustomerService);
+	
+	@Override
+	public Flux<Credit> findAll() {
 		return creditRep.findAll();
 	}
 	
-	public Mono<Credit> getCredit(String id){
+	@Override
+	public Mono<Credit> findEntityById(String id) {
 		return creditRep.findById(id);
 	}
-	
-	public Mono<Credit> saveCredit(Credit credit){
-		return creditRep.insert(credit);
+
+	@Override
+	public Mono<Credit> createEntity(Credit credit) {
+	   return creditRep.insert(credit);
 	}
-	
-	public Mono<Credit> updateCredit(Credit credit){
-		
+
+	@Override
+	public Mono<Credit> updateEntity(Credit credit) {
 		return  creditRep.findById(credit.getId())
 				 .switchIfEmpty(Mono.error( new EntityNotFoundException(msgNotFound) ))
 				 .flatMap(item-> creditRep.save(credit));
 	}
 
-	public Mono<Void> deleteCredit(String id){
-		
+	@Override
+	public Mono<Void> deleteEntity(String id) {
 		return  creditRep.findById(id)
 				 .switchIfEmpty(Mono.error( new EntityNotFoundException(msgNotFound) ))
 				 .flatMap(item-> creditRep.deleteById(id));

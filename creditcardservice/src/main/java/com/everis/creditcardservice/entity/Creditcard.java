@@ -1,6 +1,7 @@
 package com.everis.creditcardservice.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -26,11 +27,16 @@ public class Creditcard implements Serializable{
 	
 	@Id
 	private String id;
-	@Field(name = "num_doc")
-	private String numDoc;
-	@Field(name = "num_card")
-    private String numCard;
+    @Field(name = "num_doc")
+    private String numDoc;
     private String description;
-    @Field(name = "limit_credit")
-    private long limitCredit;
+    private long status;
+    @Field(name = "amount_ope")
+    private long amountOpe;
+    @Field(name = "num_card")
+    private String numCard;
+    @Field(name = "type_ope")
+    private String typeOpe;
+    @Field(name = "date_ope")
+    private Date dateOpe;
 }

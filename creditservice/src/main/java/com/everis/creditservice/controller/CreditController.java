@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.everis.creditservice.entity.Credit;
-import com.everis.creditservice.service.CreditService;
+import com.everis.creditservice.service.CreditServiceImpl;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -22,30 +22,30 @@ import reactor.core.publisher.Mono;
 public class CreditController {
 
 	@Autowired
-	private CreditService creditService;
+	private CreditServiceImpl creditService;
 	
 	@GetMapping
-	public Flux<Credit> getCredits(){
-		return creditService.getCredits();
+	public Flux<Credit> getCredit(){
+		return creditService.findAll();
 	}
 	
 	@GetMapping("/{id}")
 	public Mono<Credit> getCredit(@PathVariable String id){
-		return creditService.getCredit(id);
+		return creditService.findEntityById(id);
 	}
 	
 	@PostMapping
-	public Mono<Credit> saveCredit(@RequestBody Credit creditMono){
-		return creditService.saveCredit(creditMono);
+	public Mono<Credit> saveCredit(@RequestBody Credit CreditMono){
+		return creditService.createEntity(CreditMono);
 	}
 	
 	@PutMapping
-	public Mono<Credit> updateCredit(@RequestBody Credit creditMono){
-		return creditService.updateCredit(creditMono);
+	public Mono<Credit> updateCredit(@RequestBody Credit CreditMono){
+		return creditService.updateEntity(CreditMono);
 	}
 		
 	@DeleteMapping("/{id}")
 	public Mono<Void> deleteCredit(@PathVariable String id){
-		return creditService.deleteCredit(id);
+		return creditService.deleteEntity(id);
 	}
 }
