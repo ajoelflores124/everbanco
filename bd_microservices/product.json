@@ -46,4 +46,28 @@
   "limit_mov": null,
   "credit": 1,
   "status": 1
+},{
+  "_id": {
+    "$oid": "60d0ea2a3c21ba38c46d4ba6"
+  },
+  "id_product": "500",
+  "name_product": "Empresarial",
+  "type_product": "Activo",
+  "descripcion": "se permite más de un crédito por empresa",
+  "free_comission": false,
+  "limit_mov": null,
+  "credit": 1,
+  "status": 1
+},{
+  "_id": {
+    "$oid": "60d0eaaa3c21ba38c46d4ba7"
+  },
+  "id_product": "600",
+  "name_product": "Tarjeta Credito",
+  "type_product": "Activo",
+  "descripcion": "Tarjeta de Crédito personal o empresarial",
+  "free_comission": false,
+  "limit_mov": null,
+  "credit": 1,
+  "status": 1
 }]

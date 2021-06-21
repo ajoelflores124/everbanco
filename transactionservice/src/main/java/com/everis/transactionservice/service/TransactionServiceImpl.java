@@ -28,7 +28,7 @@ import reactor.core.publisher.Mono;
  * @author Angel
  *
  */
-@PropertySource("classpath:application.properties")
+//@PropertySource("classpath:application.properties")
 @Service
 public class TransactionServiceImpl implements ITransactionService {
 
@@ -57,6 +57,54 @@ public class TransactionServiceImpl implements ITransactionService {
 	@Value("${msg.error.cuenta.cliente.empresarial.rep}")
 	private String msgErrorCuentaClienteEmpresarialRep;
 	
+	@Value("${id.product.cnta.ahorros}")
+	private String idProductCntaAhorros;
+	
+	@Value("${id.product.cnta.corriente}")
+	private String idProductCntaCorriente;
+	
+	@Value("${id.product.cnta.plazofijo}")
+	private String idProductCntaPlazoFijo;
+	
+	@Value("${id.product.credit.personal}")
+	private String idProductCreditPersonal;
+	
+	@Value("${id.product.credit.empresarial}")
+	private String idProductCreditEmpresarial;
+	
+	@Value("${id.product.credit.tarjetacredit}")
+	private String idProductCreditTarjetaCredit;
+	
+	@Value("${product.type.pasivo}")
+	private String productTypePasivo;
+	
+	@Value("${product.type.activo}")
+	private String productTypeActivo;
+	
+	@Value("${customer.type.personal}")
+	private String customerTypePersonal;
+	
+	@Value("${customer.id.type.personal}")
+	private String customerIdTypePersonal;
+	
+	@Value("${customer.type.empresarial}")
+	private String customerTypeEmpresarial;
+	
+	@Value("${customer.id.type.empresarial}")
+	private String customerIdTypeEmpresarial; 
+	
+	@Value("${repres.type.titular}")
+	private String represTypeTitular;
+	
+	@Value("${repres.id.type.titular}")
+	private String represIdTypeTitular;
+	
+	@Value("${repres.type.firmante}")
+	private String represTypeFirmante;
+	
+	@Value("${repres.id.type.firmante}")
+	private String represIdTypeFirmante;
+	
 	@Autowired
 	private ITransactionRepository transactionRep;
 	private final ReactiveMongoTemplate mongoTemplate;
@@ -83,24 +131,12 @@ public class TransactionServiceImpl implements ITransactionService {
 	public Mono<Transaction> createEntity(Transaction transaction) throws Exception {
 		Customer customer = this.getCustomerByNumDoc(transaction.getCustomer().getNumDoc());
 		Product product= this.getProductByIdProduct(transaction.getProduct().getIdProduct());
-		System.out.println(" tipo customer=>"+ customer.getTypeCustomer());
-		System.out.println(" tipo product=>"+ product.getTypeProduct());
 		transaction.setCustomer(customer);
 		transaction.setProduct(product);
-		
-		if("P".equalsIgnoreCase(customer.getTypeCustomer()) || "Personal".equalsIgnoreCase(customer.getTypeCustomer())) {//Personal
-			//Un cliente personal solo puede tener un máximo de una cuenta de ahorro, una cuenta 
-			//corriente o cuentas a plazo fijo.
-			//Buscar alguna de las cuentas: ahorros, cuenta corriente, plazo fijo del cliente pueda tener
-			Query query= new Query( 
-					Criteria.where("customer.numDoc").is(transaction.getCustomer().getNumDoc())
-					.andOperator(
-							Criteria.where("product.idProduct").is(transaction.getProduct().getIdProduct()),
-							Criteria.where("product.typeProduct").is("Pasivo")
-							)
-					);
-			
-			long countAccounts = mongoTemplate.find(query,Transaction.class).count().share().block();
+		System.out.println(" type_customer=> " + customerTypePersonal);
+		if(customerIdTypePersonal.equalsIgnoreCase(customer.getTypeCustomer()) || customerTypePersonal.equalsIgnoreCase(customer.getTypeCustomer())) {//Personal
+			//Un cliente personal solo puede tener un máximo de una de las cuentas bancarias.
+			long  countAccounts= this.countAccountByCustomer(transaction);
 			System.out.println("count=>"+ countAccounts);
 			if(countAccounts==0) {
 				transaction.setRepresentatives(this.getRepresentativesByNumDocRep(transaction.getRepresentatives()));
@@ -110,21 +146,19 @@ public class TransactionServiceImpl implements ITransactionService {
 			}
 					
 		}else {//Empresarial
-			//Un cliente empresarial no puede tener una cuenta de ahorro o de plazo fijo pero sí 
-			//múltiples cuentas corrientes
-			if("100".equals(product.getIdProduct()) || "300".equals(product.getIdProduct())) { //ahorros (100) o plazo fijo (300)
+			//Un cliente empresarial solo puede tener múltiples cuentas corrientes las otras no. 
+			if(idProductCntaAhorros.equals(product.getIdProduct()) || idProductCntaPlazoFijo.equals(product.getIdProduct())) { //ahorros (100) o plazo fijo (300)
 				throw new Exception(msgErrorCuentaClienteEmpresarial);
 			}else {
 				//Validate Representatives
-				if("200".equals(product.getIdProduct())){ //Cuenta corriente (bancaria)
+				if(idProductCntaCorriente.equals(product.getIdProduct())){ //Cuenta corriente (bancaria) //200
 					if(!this.validateRepresentatives(transaction.getRepresentatives())) {
 						throw new Exception(msgErrorCuentaClienteEmpresarialRep);
-					}else {
-						//Se guarda los representante
-						transaction.setRepresentatives(this.getRepresentativesByNumDocRep(transaction.getRepresentatives()));
 					}
 				}
 				
+				//Se setea los representante
+				transaction.setRepresentatives(this.getRepresentativesByNumDocRep(transaction.getRepresentatives()));
 				return transactionRep.insert(transaction);
 			}
 		
@@ -183,7 +217,7 @@ public class TransactionServiceImpl implements ITransactionService {
 	public boolean validateRepresentatives(Representative[] representatives) {
 		List<Representative> listaRep= Arrays.asList(representatives);
 		long count = listaRep.stream()
-				.filter(r-> r.getTypeRep().equalsIgnoreCase("T") || r.getTypeRep().equalsIgnoreCase("Titular"))
+				.filter(r-> r.getTypeRep().equalsIgnoreCase(represIdTypeTitular)  || r.getTypeRep().equalsIgnoreCase(represTypeTitular)) // T or Titular
 				.count();
 		if(count>1)
 			return false;
@@ -205,6 +239,18 @@ public class TransactionServiceImpl implements ITransactionService {
 		return represetante;
 	}
 	
+	@Override
+	public long countAccountByCustomer(Transaction transaction) {
+		Query query= new Query( 
+				Criteria.where("customer.numDoc").is(transaction.getCustomer().getNumDoc())
+				.andOperator(
+						Criteria.where("product.idProduct").is(transaction.getProduct().getIdProduct()),
+						Criteria.where("product.typeProduct").is(productTypePasivo)//Pasivo
+						)
+				);
+		
+		return mongoTemplate.find(query,Transaction.class).count().share().block();
+	}
 	
 	
 	

@@ -15,7 +15,7 @@ import com.everis.customerservice.repository.ICustomerRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@PropertySource("classpath:application.properties")
+//@PropertySource("classpath:application.properties")
 @Service
 public class CustomerServiceImpl implements ICustomerService{
 

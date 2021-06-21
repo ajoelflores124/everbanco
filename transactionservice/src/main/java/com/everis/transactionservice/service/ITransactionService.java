@@ -7,6 +7,8 @@ import com.everis.transactionservice.entity.Product;
 import com.everis.transactionservice.entity.Representative;
 import com.everis.transactionservice.entity.Transaction;
 
+import reactor.core.publisher.Flux;
+
 public interface ITransactionService extends IMaintenanceService<Transaction> {
 
 	public Customer getCustomerByNumDoc(String numDoc);
@@ -14,4 +16,5 @@ public interface ITransactionService extends IMaintenanceService<Transaction> {
 	public Representative getDataRepresentative(Representative representative);
 	public Representative[] getRepresentativesByNumDocRep(Representative[] representatives);
 	public boolean validateRepresentatives(Representative[] representatives);
+	public long countAccountByCustomer(Transaction transaction);
 }
