@@ -48,4 +48,10 @@ public class MovementController {
 	public Mono<Void> deleteMovement(@PathVariable String id){
 		return movementService.deleteEntity(id);
 	}
+	
+	@GetMapping("/numDoc/{id}")
+	public Flux<Movement> getMovements(@PathVariable String id){
+		//System.out.println("Valor"+id);
+		return movementService.getMovements(id);
+	}
 }

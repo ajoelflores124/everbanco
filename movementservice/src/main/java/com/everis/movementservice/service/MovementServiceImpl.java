@@ -38,7 +38,7 @@ public class MovementServiceImpl implements IMovementService {
         this.mongoTemplate = mongoTemplate;
     }
     
-    WebClient webClient = WebClient.create(urlCustomerService);
+    //WebClient webClient = WebClient.create(urlCustomerService);
 	
 	@Override
 	public Flux<Movement> findAll() {
@@ -67,5 +67,11 @@ public class MovementServiceImpl implements IMovementService {
 		return  movementRep.findById(id)
 				 .switchIfEmpty(Mono.error( new EntityNotFoundException(msgNotFound) ))
 				 .flatMap(item-> movementRep.deleteById(id));
+	}
+
+	//Consultar todos los movimientos e un producto bancario que tiene un cliente 
+	@Override
+	public Flux<Movement> getMovements(String numDoc) {
+		return movementRep.findByNumDoc(numDoc);
 	}
 }
