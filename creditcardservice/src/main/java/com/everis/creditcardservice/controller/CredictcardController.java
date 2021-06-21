@@ -48,4 +48,9 @@ public class CredictcardController {
 	public Mono<Void> deleteCreditcard(@PathVariable String id){
 		return creditcardService.deleteEntity(id);
 	}
+	
+	@GetMapping("/numDoc/{id}")
+	public Flux<Creditcard> getCredits(@PathVariable String id){
+		return creditcardService.getCreditcards(id);
+	}
 }

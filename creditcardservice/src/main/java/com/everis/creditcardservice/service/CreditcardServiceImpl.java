@@ -64,4 +64,11 @@ public class CreditcardServiceImpl implements ICreditcardService{
 				 .flatMap(item-> creditcardRep.deleteById(id));
 	}
 	
+	//Consultar todos los movimientos e un producto bancario que tiene un cliente 
+	@Override
+	public Flux<Creditcard> getCreditcards(String numdoc) {
+		// TODO Auto-generated method stub
+		return creditcardRep.findByNumDoc(numdoc);
+	}
+	
 }
