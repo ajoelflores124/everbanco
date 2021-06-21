@@ -1,169 +1,247 @@
 [{
   "_id": {
-    "$oid": "60ca36ec5b600752a5d404d6"
+    "$oid": "60d03661e7dcb42ee639e865"
   },
   "date_tra": {
-    "$date": "2021-06-14T05:00:00Z"
+    "$date": "2021-06-21T05:00:00Z"
   },
-  "num_account": "10000000001",
+  "num_account": "10000000008",
   "type_tra": "Pasivo",
   "limit_credit": 0,
   "balance": 0,
   "out_credit": 0,
-  "movement": [
-    {
-      "type_mov": "D",
-      "date_mov": {
-        "$date": "2021-06-14T05:00:00Z"
-      },
-      "amount_mov": 1000.5
-    },
-    {
-      "type_mov": "R",
-      "date_mov": {
-        "$date": "2021-06-15T05:00:00Z"
-      },
-      "amount_mov": 500.5
-    }
-  ],
-  "payment": [
-    {
-      "date_pay": {
-        "$date": "2021-06-15T05:00:00Z"
-      },
-      "amount_pay": 100.5,
-      "desc_pay": "Pago de tarjeta de credito del mes de Junio"
-    }
-  ],
-  "consumption": [
-    {
-      "date_con": {
-        "$date": "2021-06-14T05:00:00Z"
-      },
-      "amount_con": "150.99",
-      "desc_con": "Compras en supermercado Mass"
-    }
-  ],
   "customer": {
-    "num_doc": "12345678",
-    "name": "Juan",
-    "lastname": "Perez",
-    "type_customer": "Personal"
+    "num_doc": "10202020200",
+    "name": "Sheraton",
+    "lastname": "Hotel",
+    "type_customer": "E"
   },
   "representatives": [
     {
       "num_doc_rep": "30303030",
       "name_rep": "Carlos",
-      "lastname": "Dias Dias",
-      "type_rep": "T,F"
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "32323232",
+      "name_rep": "Juan",
+      "lastname_rep": "Campos Dias",
+      "type_rep": "F"
     }
   ],
-  "desc_tra": "apertura de cuenta de ahorros",
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente empresarial",
   "status": 1,
+  "amount_loan": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60d036e8fe64001b9373b1ce"
+  },
+  "date_tra": {
+    "$date": "2021-06-21T05:00:00Z"
+  },
+  "num_account": "10000000008",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "10101010",
+    "name": "Jorge",
+    "lastname": "Lopez",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Hugo",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "F"
+    }
+  ],
   "product": {
     "id_product": "100",
     "name_product": "Ahorro",
     "type_product": "Pasivo"
-  }
-},{
-  "_id": {
-    "$oid": "60cbfb4cbe419c0cc9cc706e"
   },
-  "date_tra": {
-    "$date": "2021-06-17T05:00:00Z"
-  },
-  "num_account": "10000000003",
-  "type_tra": "Pasivo",
-  "limit_credit": 0,
-  "balance": 0,
-  "out_credit": 0,
-  "customer": {
-    "num_doc": "12345678",
-    "name": "Hugo",
-    "lastname": "Campos Campos",
-    "type_customer": "P"
-  },
-  "desc_tra": "apertura de cuenta corriente editado3",
-  "status": 0,
-  "_class": "com.everis.transactionservice.entity.Transaction"
-},{
-  "_id": "60cbfb4cbe419c0cc9cc706e__",
-  "date_tra": {
-    "$date": "2021-06-17T05:00:00Z"
-  },
-  "num_account": "10000000003",
-  "type_tra": "Pasivo",
-  "limit_credit": 0,
-  "balance": 0,
-  "out_credit": 0,
-  "customer": {
-    "num_doc": "12345678",
-    "name": "Hugo",
-    "lastname": "Campos Campos",
-    "type_customer": "P"
-  },
-  "desc_tra": "apertura de cuenta corriente editado2",
-  "status": 0,
-  "_class": "com.everis.transactionservice.entity.Transaction"
-},{
-  "_id": "60cbfb4cbe419c0cc9cc706e__000",
-  "date_tra": {
-    "$date": "2021-06-17T05:00:00Z"
-  },
-  "num_account": "10000000003",
-  "type_tra": "Pasivo",
-  "limit_credit": 0,
-  "balance": 0,
-  "out_credit": 0,
-  "customer": {
-    "num_doc": "12345678",
-    "name": "Hugo",
-    "lastname": "Campos Campos",
-    "type_customer": "P"
-  },
-  "desc_tra": "apertura de cuenta corriente editado2",
-  "status": 0,
+  "desc_tra": "apertura de cuenta ahorros peronal",
+  "status": 1,
+  "amount_loan": 0,
   "_class": "com.everis.transactionservice.entity.Transaction"
 },{
   "_id": {
-    "$oid": "60ccdf1a15d7823f3a620480"
+    "$oid": "60d03704fe64001b9373b1cf"
   },
   "date_tra": {
-    "$date": "2021-06-17T05:00:00Z"
+    "$date": "2021-06-21T05:00:00Z"
   },
-  "num_account": "10000000004",
+  "num_account": "10000000008",
   "type_tra": "Pasivo",
   "limit_credit": 0,
   "balance": 0,
   "out_credit": 0,
   "customer": {
-    "num_doc": "12345678",
-    "name": "Juan carlos",
-    "lastname": "Campos Campos",
+    "num_doc": "10101010",
+    "name": "Jorge",
+    "lastname": "Lopez",
     "type_customer": "P"
   },
-  "desc_tra": "apertura de cuenta corriente editado2",
-  "status": 0,
-  "_class": "com.everis.saleservice.entity.Transaction"
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Hugo",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente personal",
+  "status": 1,
+  "amount_loan": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
 },{
   "_id": {
-    "$oid": "60cce1b0536d126ccecc3e8f"
+    "$oid": "60d03719fe64001b9373b1d0"
   },
   "date_tra": {
-    "$date": "2021-06-17T05:00:00Z"
+    "$date": "2021-06-21T05:00:00Z"
   },
-  "num_account": "10000000004",
+  "num_account": "10000000008",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "10101010",
+    "name": "Jorge",
+    "lastname": "Lopez",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Hugo",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "300",
+    "name_product": "Plazo fijo",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta plazo fijo personal",
+  "status": 1,
+  "amount_loan": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60d037b4fe64001b9373b1d1"
+  },
+  "date_tra": {
+    "$date": "2021-06-21T05:00:00Z"
+  },
+  "num_account": "10000000008",
   "type_tra": "Pasivo",
   "limit_credit": 0,
   "balance": 0,
   "out_credit": 0,
   "customer": {
     "num_doc": "12345678",
-    "name": "Juan carlos",
-    "lastname": "Campos Campos",
+    "name": "Juan",
+    "lastname": "Perez",
     "type_customer": "P"
   },
-  "desc_tra": "apertura de cuenta corriente editado2",
-  "status": 0,
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Hugo",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "300",
+    "name_product": "Plazo fijo",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta plazo fijo personal",
+  "status": 1,
+  "amount_loan": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60d037ebfe64001b9373b1d2"
+  },
+  "date_tra": {
+    "$date": "2021-06-21T05:00:00Z"
+  },
+  "num_account": "10000000008",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Juan",
+    "lastname": "Perez",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Hugo",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "100",
+    "name_product": "Ahorro",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta ahorro personal",
+  "status": 1,
+  "amount_loan": 0,
   "_class": "com.everis.transactionservice.entity.Transaction"
 }]
