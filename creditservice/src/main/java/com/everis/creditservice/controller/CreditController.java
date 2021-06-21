@@ -48,4 +48,11 @@ public class CreditController {
 	public Mono<Void> deleteCredit(@PathVariable String id){
 		return creditService.deleteEntity(id);
 	}
+	
+	@GetMapping("/numDoc/{id}")
+	public Flux<Credit> getCredits(@PathVariable String id){
+		return creditService.getCredits(id);
+	}
+	
+	
 }

@@ -63,4 +63,12 @@ public class CreditServiceImpl implements ICreditService{
 				 .switchIfEmpty(Mono.error( new EntityNotFoundException(msgNotFound) ))
 				 .flatMap(item-> creditRep.deleteById(id));
 	}
+
+	//Consultar todos los movimientos e un producto bancario que tiene un cliente 
+	@Override
+	public Flux<Credit> getCredits(String numdoc) {
+		return creditRep.findByNumDoc(numdoc);
+	}
+	
+	
 }
