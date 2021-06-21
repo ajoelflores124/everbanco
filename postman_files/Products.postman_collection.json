@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "f6d0a6a0-1aa6-4cae-8442-55370b58e5a9",
+		"name": "Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find producto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/product/find-by-product/400",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"product",
+						"find-by-product",
+						"400"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"60d10d41d573961f3966121e\",\r\n    \"idProduct\": \"700\",\r\n    \"nameProduct\": \"Personal nuevo editado\",\r\n    \"typeProduct\": \"Activo\",\r\n    \"description\": null,\r\n    \"freeComission\": false,\r\n    \"limitMOV\": 0,\r\n    \"credit\": 1,\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"idProduct\": \"700\",\r\n    \"nameProduct\": \"Personal nuevo editado\",\r\n    \"typeProduct\": \"Activo\",\r\n    \"description\": null,\r\n    \"freeComission\": false,\r\n    \"limitMOV\": 0,\r\n    \"credit\": 1,\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"60d10d41d573961f3966121e\",\r\n    \"idProduct\": \"700\",\r\n    \"nameProduct\": \"Personal nuevo editado\",\r\n    \"typeProduct\": \"Activo\",\r\n    \"description\": null,\r\n    \"freeComission\": false,\r\n    \"limitMOV\": 0,\r\n    \"credit\": 1,\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/product/60d10d41d573961f3966121e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"product",
+						"60d10d41d573961f3966121e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

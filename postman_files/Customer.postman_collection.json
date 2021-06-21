@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "e360683b-f817-451f-938e-3a8ce0cc3e3a",
+		"name": "Customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/find-by-numdoc/12345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"find-by-numdoc",
+						"12345678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"numDoc\": \"50505050\",\r\n    \"name\": \"Juan\",\r\n    \"lastname\": \"Perez nuevo\",\r\n    \"phone\": \"987465123\",\r\n    \"email\": \"jpereznuevo@gmail.com\",\r\n    \"address\": \"Dir. A,B,C #234 Lima\",\r\n    \"status\": 1,\r\n    \"typeCustomer\": \"P\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"60d1142641d9b415a515cc40\",\r\n    \"numDoc\": \"50505050\",\r\n    \"name\": \"Juan\",\r\n    \"lastname\": \"Perez nuevo editad\",\r\n    \"phone\": \"987465123\",\r\n    \"email\": \"jpereznueveditado@gmail.com\",\r\n    \"address\": \"Dir. A,B,C #234 Lima\",\r\n    \"status\": 1,\r\n    \"typeCustomer\": \"P\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/60d1142641d9b415a515cc40",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"60d1142641d9b415a515cc40"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

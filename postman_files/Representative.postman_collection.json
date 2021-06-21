@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "5795174d-14a4-4040-83e0-450aeabd47c4",
+		"name": "Representative",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list rep",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/representative",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"representative"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find rep",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/representative/find-by-numdoc/30303030",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"representative",
+						"find-by-numdoc",
+						"30303030"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new rep",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"numDocRep\": \"40404040\",\r\n    \"nameRep\": \"Carlos\",\r\n    \"lastnameRep\": \"Nuevo Nuevo\",\r\n    \"emailRep\": \"cnnuevo@gmail.com\",\r\n    \"addressRep\": \"av abcd 123\",\r\n    \"phoneRep\": \"989898123\",\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/representative",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"representative"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update rep",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"60d112d6bdcbc8661e4f75ac\",\r\n    \"numDocRep\": \"40404040\",\r\n    \"nameRep\": \"Carlos\",\r\n    \"lastnameRep\": \"Nuevo Nuevo editado\",\r\n    \"emailRep\": \"cnnuevo@gmail.com\",\r\n    \"addressRep\": \"av abcd 123\",\r\n    \"phoneRep\": \"989898123\",\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/representative",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"representative"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/representative/60cc2035c6bac004a93f989e\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"representative",
+						"60cc2035c6bac004a93f989e\n"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

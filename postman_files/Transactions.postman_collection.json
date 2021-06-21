@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "861bb90f-4a64-4964-bbf6-440bec14dadd",
+		"name": "Transactions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"dateTra\": \"2021-06-22T05:00:00.000+00:00\",\r\n    \"numAccount\": \"10000000010\",\r\n    \"typeTra\": \"Pasivo\",\r\n    \"limitCredit\": 0,\r\n    \"balance\": 0,\r\n    \"outCredit\": 0,\r\n    \"customer\": {\r\n        \"numDoc\": \"20303030300\"\r\n    },\r\n    \"product\": {\r\n        \"idProduct\": \"200\"\r\n        \r\n    },\r\n    \"representatives\": \r\n  \t[\r\n        {\r\n            \"numDocRep\": \"30303030\",\r\n            \"typeRep\": \"T\"\r\n        },\r\n        {\r\n            \"numDocRep\": \"31313131\",\r\n            \"typeRep\": \"F\"   \r\n        }\r\n     ]\r\n  \t,\r\n    \"descTra\": \"apertura de cuenta corriente empresarial\",\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list trasactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/transaction/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transaction",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/transaction/60d0c1f5ee521c258cdd185f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transaction",
+						"60d0c1f5ee521c258cdd185f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
