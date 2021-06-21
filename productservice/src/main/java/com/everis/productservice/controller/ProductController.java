@@ -49,4 +49,9 @@ public class ProductController {
 	public Mono<Void> deleteTransaction(@PathVariable String id){
 		return productService.deleteTransaction(id);
 	}
+	
+	@GetMapping("/find-by-product/{idProduct}")
+	public Mono<Product> getTransacionByIdProduct(@PathVariable String idProduct){
+		return productService.getTransacionByIdProduct(idProduct);
+	}
 }

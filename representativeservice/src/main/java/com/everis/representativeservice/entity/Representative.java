@@ -34,8 +34,8 @@ public class Representative implements Serializable {
     private String addressRep;
 	@Field(name = "phone_rep")
 	private String phoneRep;
-	@Field(name = "type_rep")
-    private String typeRep;
+	/*@Field(name = "type_rep")
+    private String typeRep;*/
 	@Field(name = "status")
     private long status;
     

@@ -49,4 +49,9 @@ public class RepresentativeController {
 	public Mono<Void> deleteRepresentative(@PathVariable String id){
 		return representativeService.deleteRepresentative(id);
 	}
+	
+	@GetMapping("/find-by-numdoc/{numDocRep}")
+	public Mono<Representative> getRepresentativeByNumDocRep(@PathVariable String numDocRep){
+		return representativeService.getRepresentativeByNumDocRep(numDocRep);
+	}
 }

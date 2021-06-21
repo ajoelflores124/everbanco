@@ -50,4 +50,9 @@ public class RepresentativeService {
 		
 	}
 	
+	public Mono<Representative> getRepresentativeByNumDocRep(String numDocRep){
+		return representativeRep.findByNumDocRep(numDocRep)
+				.switchIfEmpty(Mono.error( new EntityNotFoundException(msgNotFound) ));
+	}
+	
 }

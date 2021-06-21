@@ -32,19 +32,21 @@ public class Transaction implements Serializable {
 	@Field(name = "type_tra")
     private String typeTra;
 	@Field(name = "limit_credit")
-    private long limitCredit;
-    private long balance;
+    private double limitCredit;
+    private double balance;
     @Field(name = "out_credit")
-    private long outCredit;
-    private Movement[] movement;
+    private double outCredit;
+    /*private Movement[] movement;
     private Payment[] payment;
-    private Consumption[] consumption;
+    private Consumption[] consumption;*/
     private Customer customer;
     private Representative[] representatives;
     private Product product;
     @Field(name = "desc_tra")
     private String descTra;
     private long status;
+    @Field(name = "amount_loan")
+    private double amountLoan;
     
   
 	

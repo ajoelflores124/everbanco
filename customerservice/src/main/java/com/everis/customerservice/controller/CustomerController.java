@@ -47,4 +47,9 @@ public class CustomerController {
 	public Mono<Void> deleteCustomer(@PathVariable String id){
 		return customerService.deleteEntity(id);
 	}
+	
+	@GetMapping("/find-by-numdoc/{numDoc}")
+	public Mono<Customer> getCustomerByNumDoc(@PathVariable String numDoc){
+		return customerService.findByNumDoc(numDoc);
+	}
 }

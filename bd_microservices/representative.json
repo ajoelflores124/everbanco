@@ -2,12 +2,35 @@
   "_id": {
     "$oid": "60ca59385b600752a5d404d7"
   },
-  "num_doc_rep": "30303030",
   "name_rep": "Carlos",
   "lastname_rep": "Dias Dias",
   "email_rep": "cdias@gmail.com",
   "address_rep": "av abcd 123",
   "phone_rep": "989898123",
-  "type_rep": "T,F",
-  "status": "1"
+  "status": "1",
+  "num_doc_rep": "30303030"
+},{
+  "_id": {
+    "$oid": "60cc2035c6bac004a93f989e"
+  },
+  "name_rep": "Hugo",
+  "lastname_rep": "Dias Dias",
+  "email_rep": "cdias@gmail.com",
+  "address_rep": "av abcd 123",
+  "phone_rep": "989898123",
+  "status": 1,
+  "_class": "com.everis.representativeservice.entity.Representative",
+  "num_doc_rep": "31313131"
+},{
+  "_id": {
+    "$oid": "60cc2044c6bac004a93f989f"
+  },
+  "name_rep": "Juan",
+  "lastname_rep": "Campos Dias",
+  "email_rep": "jcampos@gmail.com",
+  "address_rep": "av abcd 123",
+  "phone_rep": "999999999",
+  "status": 1,
+  "_class": "com.everis.representativeservice.entity.Representative",
+  "num_doc_rep": "32323232"
 }]

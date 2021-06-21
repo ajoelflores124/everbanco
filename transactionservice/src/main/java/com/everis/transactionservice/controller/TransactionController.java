@@ -39,7 +39,7 @@ public class TransactionController {
 	}
 	
 	@PostMapping
-	public Mono<Transaction> saveProduct(@RequestBody Transaction transactionMono){
+	public Mono<Transaction> saveProduct(@RequestBody Transaction transactionMono) throws Exception{
 		return transactionService.createEntity(transactionMono);
 	}
 	

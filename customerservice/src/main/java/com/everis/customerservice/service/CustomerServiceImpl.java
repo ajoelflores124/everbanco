@@ -65,4 +65,12 @@ public class CustomerServiceImpl implements ICustomerService{
 				 .flatMap(item-> customerRep.deleteById(id));
 	}
 
+	@Override
+	public Mono<Customer> findByNumDoc(String numDoc) {
+		return  customerRep.findByNumDoc(numDoc)
+				.switchIfEmpty(Mono.error(new EntityNotFoundException(msgNotFound)) );
+				 
+				 
+	}
+
 }

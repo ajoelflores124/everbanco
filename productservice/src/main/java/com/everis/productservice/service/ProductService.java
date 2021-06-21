@@ -34,4 +34,8 @@ public class ProductService {
 	public Mono<Void> deleteTransaction(String id){
 		return productRep.deleteById(id);
 	}
+	
+	public Mono<Product> getTransacionByIdProduct(String idProduct){
+		return productRep.findByIdProduct(idProduct);
+	}
 }
