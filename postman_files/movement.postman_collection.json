@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "8f1061e6-7be7-4ca2-b3ef-e58311b5a17b",
+		"name": "movement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list Movements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/movement/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"movement",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find Movements by customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/movement/numDoc/12354678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"movement",
+						"numDoc",
+						"12354678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new Movements",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"numDoc\": \"10101010\",\r\n        \"description\": \"Ahorro\",\r\n        \"numAccount\": \"9638527419631234\",\r\n        \"amount\": 1000,\r\n        \"date\": \"2021-06-21T05:00:00.000+00:00\",\r\n        \"typeMOV\": \"D\",\r\n        \"status\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/movement/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"movement",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Movements",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"60d113a03b205a75e2b80e64\",\r\n    \"numDoc\": \"10101010\",\r\n    \"description\": \"Retiro\",\r\n    \"numAccount\": \"9638527419631234\",\r\n    \"amount\": 300,\r\n    \"date\": \"2021-06-21T05:00:00.000+00:00\",\r\n    \"typeMOV\": \"D\",\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/movement/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"movement",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Movements",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/movement/60d113a03b205a75e2b80e64",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"movement",
+						"60d113a03b205a75e2b80e64"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

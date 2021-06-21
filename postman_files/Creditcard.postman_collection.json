@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "5c5bd84d-bf15-4ff2-9ff7-a020a8486260",
+		"name": "Creditcard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list Creditcard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/creditcard/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"creditcard",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find Creditcard by customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/creditcard/numDoc/12354678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"creditcard",
+						"numDoc",
+						"12354678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new Creditcard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"numDoc\": \"12354678\",\r\n        \"description\": \"Pago del mes Julio - Tarjeta OH\",\r\n        \"status\": 1,\r\n        \"amountOpe\": 500,\r\n        \"numCard\": \"10101010\",\r\n        \"typeOpe\": \"Cargo\",\r\n        \"dateOpe\": \"2021-06-18T05:00:00.000+00:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8087/creditcard/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"creditcard",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Creditcard",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"60d118478cc3463054629d75\",\r\n    \"numDoc\": \"12354678\",\r\n    \"description\": \"Pago del mes Junio - Tarjeta OH\",\r\n    \"status\": 1,\r\n    \"amountOpe\": 600,\r\n    \"numCard\": \"10101010\",\r\n    \"typeOpe\": \"Cargo\",\r\n    \"dateOpe\": \"2021-06-18T05:00:00.000+00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8087/creditcard/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"creditcard",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Creditcard",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8087/creditcard/60d118478cc3463054629d75",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"creditcard",
+						"60d118478cc3463054629d75"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

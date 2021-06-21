@@ -4,11 +4,37 @@
   },
   "num_doc": "12354678",
   "description": "Ahorro",
-  "num_account": "10101010",
+  "num_account": "9638527419638527",
   "amount": 1000,
   "date": {
     "$date": "2021-06-18T05:00:00Z"
   },
+  "type_mov": "D",
+  "status": 1
+},{
+  "_id": {
+    "$oid": "60d0db1c215e532518cbfc52"
+  },
+  "num_doc": "12354678",
+  "description": "Ahorro",
+  "num_account": "9638527419638527",
+  "amount": 100,
+  "date": {
+    "$date": "2021-06-21T05:00:00Z"
+  },
   "type_mov": "R",
+  "status": 1
+},{
+  "_id": {
+    "$oid": "60d0f132215e532518cbfc53"
+  },
+  "num_doc": "10101010",
+  "description": "Ahorro",
+  "num_account": "3216549873216549",
+  "amount": 500,
+  "date": {
+    "$date": "2021-06-21T05:00:00Z"
+  },
+  "type_mov": "D",
   "status": 1
 }]

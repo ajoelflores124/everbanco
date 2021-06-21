@@ -11,4 +11,17 @@
   "date_ope": {
     "$date": "2021-06-18T05:00:00Z"
   }
+},{
+  "_id": {
+    "$oid": "60d1189d215e532518cbfc54"
+  },
+  "num_doc": "12354678",
+  "description": "Pago del mes Julio - Tarjeta OH",
+  "status": 1,
+  "amount_ope": 500,
+  "num_card": "10101010",
+  "type_ope": "Cargo,Pago",
+  "date_ope": {
+    "$date": "2021-06-21T05:00:00Z"
+  }
 }]

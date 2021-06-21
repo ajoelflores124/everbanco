@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "5ef654da-53d1-43a8-af45-e6d5956d8434",
+		"name": "Credit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find Credit by customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8086/credit/numDoc/12354678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"credit",
+						"numDoc",
+						"12354678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new Credit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"numDoc\": \"12354678\",\r\n        \"description\": \"Cuota Mes de Julio\",\r\n        \"status\": 1,\r\n        \"amountPay\": 1100,\r\n        \"datePay\": \"2021-06-21T00:00:00.000+00:00\",\r\n        \"numTra\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/credit/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"credit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Credit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"60d11577574eba29560707f0\",\r\n        \"numDoc\": \"12354678\",\r\n        \"description\": \"Cuota Mes de Julio\",\r\n        \"status\": 1,\r\n        \"amountPay\": 1100,\r\n        \"datePay\": \"2021-07-21T00:00:00.000+00:00\",\r\n        \"numTra\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/credit/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"credit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Credit",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/credit/60d114f1574eba29560707ef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"credit",
+						"60d114f1574eba29560707ef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list Credit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8086/credit/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"credit",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
