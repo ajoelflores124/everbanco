@@ -1,1 +1,46 @@
-<mxfile host="app.diagrams.net" modified="2021-06-22T17:51:51.165Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" version="14.8.0" etag="jDHX4YZt5TrOY-A5b9F2" type="github"><diagram id="-QXzhYb8i4Vookv2IYnD">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-06-22T18:02:22.033Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="a0YNG8KmbFwbv9TW-07b" version="14.8.0" type="github">
+  <diagram id="-QXzhYb8i4Vookv2IYnD" name="Page-1">
+    <mxGraphModel dx="1038" dy="489" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-1" value="Micro-Transaction" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=#ffffff;fontSize=12;spacingTop=3;image;image=img/lib/ibm/miscellaneous/microservices_application.svg;" vertex="1" parent="1">
+          <mxGeometry x="330" y="70" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-2" value="Micro-Customer" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=#ffffff;fontSize=12;spacingTop=3;image;image=img/lib/ibm/miscellaneous/microservices_application.svg;" vertex="1" parent="1">
+          <mxGeometry x="330" y="210" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-3" value="Micro-Product" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=#ffffff;fontSize=12;spacingTop=3;image;image=img/lib/ibm/miscellaneous/microservices_application.svg;" vertex="1" parent="1">
+          <mxGeometry x="330" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-6" value="bdtransaction" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.mongodb;gradientColor=#DFDEDE" vertex="1" parent="1">
+          <mxGeometry x="510" y="70" width="50" height="62.4" as="geometry" />
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-7" value="bdcustomer" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.mongodb;gradientColor=#DFDEDE" vertex="1" parent="1">
+          <mxGeometry x="510" y="210" width="50" height="62.4" as="geometry" />
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-8" value="bdproduct" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.mongodb;gradientColor=#DFDEDE" vertex="1" parent="1">
+          <mxGeometry x="520" y="340" width="50" height="62.4" as="geometry" />
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-10" value="" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ezxqX9jYdox4bQbeEkJT-2" target="ezxqX9jYdox4bQbeEkJT-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="220" as="sourcePoint" />
+            <mxPoint x="440" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-12" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="ezxqX9jYdox4bQbeEkJT-1" target="ezxqX9jYdox4bQbeEkJT-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="100.69999999999999" as="sourcePoint" />
+            <mxPoint x="510" y="101.69310344827585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-13" value="" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ezxqX9jYdox4bQbeEkJT-3" target="ezxqX9jYdox4bQbeEkJT-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="369" as="sourcePoint" />
+            <mxPoint x="500" y="370.49310344827586" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
