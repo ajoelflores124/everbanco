@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2021-06-22T18:02:22.033Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="a0YNG8KmbFwbv9TW-07b" version="14.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-22T18:05:30.442Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="fi7NNLVSpbZvH3I8x7P5" version="14.8.0" type="github">
   <diagram id="-QXzhYb8i4Vookv2IYnD" name="Page-1">
     <mxGraphModel dx="1038" dy="489" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-16" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="50" width="370" height="410" as="geometry" />
+        </mxCell>
         <mxCell id="ezxqX9jYdox4bQbeEkJT-1" value="Micro-Transaction" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=#ffffff;fontSize=12;spacingTop=3;image;image=img/lib/ibm/miscellaneous/microservices_application.svg;" vertex="1" parent="1">
           <mxGeometry x="330" y="70" width="60" height="60" as="geometry" />
         </mxCell>
@@ -39,6 +42,18 @@
             <mxPoint x="370" y="369" as="sourcePoint" />
             <mxPoint x="500" y="370.49310344827586" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-14" value="Api Gateway" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=#ffffff;fontSize=12;spacingTop=3;image;image=img/lib/ibm/miscellaneous/microservices_application.svg;" vertex="1" parent="1">
+          <mxGeometry x="760" y="200" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-17" value="Eureka" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=#ffffff;fontSize=12;spacingTop=3;image;image=img/lib/ibm/miscellaneous/microservices_application.svg;" vertex="1" parent="1">
+          <mxGeometry x="90" y="100" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-18" value="ConfigServer" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=#ffffff;fontSize=12;spacingTop=3;image;image=img/lib/ibm/miscellaneous/microservices_application.svg;" vertex="1" parent="1">
+          <mxGeometry x="90" y="280" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ezxqX9jYdox4bQbeEkJT-19" value="Repositorio Config Server" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_git-128.png" vertex="1" parent="1">
+          <mxGeometry x="76" y="402.4" width="88" height="88" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
