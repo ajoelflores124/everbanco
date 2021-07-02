@@ -134,6 +134,15 @@ public class TransactionServiceImpl implements ITransactionService {
 		transaction.setCustomer(customer);
 		transaction.setProduct(product);
 		System.out.println(" type_customer=> " + customerTypePersonal);
+		
+		//validar si el cliente tiene una deuda vencida
+		long countDbtExp= this.countDebtExpiredByCustomer(transaction.getCustomer().getNumDoc());
+		System.out.println("cant deuda exp=>"+ countDbtExp);
+		if(countDbtExp>0) {
+			throw new Exception("El cliente tiene una deuda vencida, no puede adquirir nuevos producto");
+		}
+		
+		
 		if(customerIdTypePersonal.equalsIgnoreCase(customer.getTypeCustomer()) || customerTypePersonal.equalsIgnoreCase(customer.getTypeCustomer())) {//Personal
 			//Un cliente personal solo puede tener un máximo de una de las cuentas bancarias.
 			long  countAccounts= this.countAccountByCustomer(transaction);
@@ -251,7 +260,31 @@ public class TransactionServiceImpl implements ITransactionService {
 		
 		return mongoTemplate.find(query,Transaction.class).count().share().block();
 	}
-	
-	
+
+	@Override
+	public long countDebtExpiredByCustomer(String numDoc) {
+		Query query= new Query( 
+				Criteria.where("customer.numDoc").is(numDoc)
+				.andOperator(
+						Criteria.where("status").is(1),
+						Criteria.where("closedAccount").is(false),//no cerrada
+						Criteria.where("debtStatus").is("vencida"),//vencida
+						Criteria.where("product.typeProduct").is(productTypeActivo)
+						)
+				);
+		return mongoTemplate.find(query,Transaction.class).count().share().block();
+	}
+
+	@Override
+	public Mono<Transaction> findByNumAccount(String numAcc) {
+		return transactionRep.findByNumAccount(numAcc);
+	}
+
+	@Override
+	public Mono<Transaction> updateBalance(String numAcc, Double balance, String oper) {
+		return transactionRep.findByNumAccount(numAcc)
+				.doOnNext(e-> e.setBalance( oper.equals("+")?e.getBalance()+balance: e.getBalance()-balance))
+				.flatMap(transactionRep::save);
+	}	
 	
 }

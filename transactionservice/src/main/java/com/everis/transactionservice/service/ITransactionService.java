@@ -8,6 +8,7 @@ import com.everis.transactionservice.entity.Representative;
 import com.everis.transactionservice.entity.Transaction;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 public interface ITransactionService extends IMaintenanceService<Transaction> {
 
@@ -17,4 +18,8 @@ public interface ITransactionService extends IMaintenanceService<Transaction> {
 	public Representative[] getRepresentativesByNumDocRep(Representative[] representatives);
 	public boolean validateRepresentatives(Representative[] representatives);
 	public long countAccountByCustomer(Transaction transaction);
+	
+	public long countDebtExpiredByCustomer(String numDoc);
+	public Mono<Transaction> findByNumAccount(String numAcc );
+	public Mono<Transaction> updateBalance(String numAcc, Double balance, String oper );
 }

@@ -52,5 +52,15 @@ public class TransactionController {
 	public Mono<Void> deleteTransaction(@PathVariable String id){
 		return transactionService.deleteEntity(id);
 	}
+	
+	@GetMapping("/find-numacc/{numacc}")
+	public Mono<Transaction> updateTransaction(@PathVariable String numacc){
+		return transactionService.findByNumAccount(numacc);
+	}
+	
+	@PutMapping("/update-balance/{numacc}/{balance}/{oper}")
+	public Mono<Transaction> updateTransaction(@PathVariable String numacc,@PathVariable Double balance, @PathVariable String oper){
+		return transactionService.updateBalance(numacc, balance, oper);
+	}
 
 }
