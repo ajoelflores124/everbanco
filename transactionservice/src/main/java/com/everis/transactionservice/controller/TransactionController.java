@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.everis.transactionservice.dto.ResumeDTO;
+import com.everis.transactionservice.entity.DebitAssociation;
+import com.everis.transactionservice.entity.DebitMovement;
 import com.everis.transactionservice.entity.Transaction;
+import com.everis.transactionservice.service.IDebitMovementService;
 import com.everis.transactionservice.service.ITransactionService;
 import com.everis.transactionservice.service.TransactionServiceImpl;
 
@@ -27,6 +31,9 @@ public class TransactionController {
 	
 	@Autowired
 	private ITransactionService transactionService;
+	
+	@Autowired
+	private IDebitMovementService debitMovementService;
 	
 	@GetMapping
 	public Flux<Transaction> getTransactions(){
@@ -61,6 +68,18 @@ public class TransactionController {
 	@PutMapping("/update-balance/{numacc}/{balance}/{oper}")
 	public Mono<Transaction> updateTransaction(@PathVariable String numacc,@PathVariable Double balance, @PathVariable String oper){
 		return transactionService.updateBalance(numacc, balance, oper);
+	}
+	
+	@PostMapping("/make-pay-debit-det")
+	public Flux<ResumeDTO> updateBalanceAccountsByCardDebitDet(@RequestBody DebitMovement debitMov) throws Exception{
+				
+		debitMovementService.createEntity(debitMov).subscribe();
+		return transactionService.updateBalanceAccountsByCardDebit(debitMov.getCardNumDebit(), debitMov.getAmountMov());
+	}
+	
+	@GetMapping("/balance-main-account/{cardDebit}")
+	public Mono<Transaction> listAccounts(@PathVariable String cardDebit){
+		return transactionService.getBalanceAccountMain(cardDebit);
 	}
 
 }

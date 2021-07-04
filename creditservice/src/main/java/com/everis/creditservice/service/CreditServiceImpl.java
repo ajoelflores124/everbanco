@@ -1,5 +1,7 @@
 package com.everis.creditservice.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -10,11 +12,13 @@ import org.springframework.web.reactive.function.client.WebClient;
 import com.everis.creditservice.entity.Credit;
 import com.everis.creditservice.exception.EntityNotFoundException;
 import com.everis.creditservice.repository.ICreditRepository;
+import com.everis.creditservice.webclient.TransactionServiceClient;
+import com.everis.creditservice.webclient.model.DebitMovementDTO;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@PropertySource("classpath:application.properties")
+//@PropertySource("classpath:application.properties")
 @Service
 public class CreditServiceImpl implements ICreditService{
 
@@ -26,6 +30,10 @@ public class CreditServiceImpl implements ICreditService{
 	
 	@Autowired
 	private ICreditRepository creditRep;
+	
+	@Autowired
+	private TransactionServiceClient transactionServiceClient;
+	
 	private final ReactiveMongoTemplate mongoTemplate;
 	
 	@Autowired
@@ -47,6 +55,19 @@ public class CreditServiceImpl implements ICreditService{
 
 	@Override
 	public Mono<Credit> createEntity(Credit credit) {
+	  //verificar si el pago es con debito
+	  if(credit.getDebitCardPay()!=null) {
+		  
+		  DebitMovementDTO debitM= new DebitMovementDTO();
+		  debitM.setCardNumDebit(credit.getDebitCardPay());
+		  debitM.setDesMov(credit.getDescription());
+		  debitM.setTypeOper("Pago");
+		  debitM.setAmountMov( credit.getAmountPay() );
+		  
+		  transactionServiceClient.updateBalanceAccountsByCardDebitDet(debitM).subscribe();
+	  }
+		
+	   credit.setDatePay(new Date());
 	   return creditRep.insert(credit);
 	}
 

@@ -1,5 +1,7 @@
 package com.everis.creditcardservice.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -10,6 +12,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 import com.everis.creditcardservice.entity.Creditcard;
 import com.everis.creditcardservice.exception.EntityNotFoundException;
 import com.everis.creditcardservice.repository.ICreditcardRepository;
+import com.everis.creditcardservice.webclient.TransactionServiceClient;
+import com.everis.creditcardservice.webclient.model.DebitMovementDTO;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -26,6 +30,10 @@ public class CreditcardServiceImpl implements ICreditcardService{
 	
 	@Autowired
 	private ICreditcardRepository creditcardRep;
+	
+	@Autowired
+	private TransactionServiceClient transactionServiceClient;
+	
 	private final ReactiveMongoTemplate mongoTemplate;
 	
 	@Autowired
@@ -47,6 +55,16 @@ public class CreditcardServiceImpl implements ICreditcardService{
 
 	@Override
 	public Mono<Creditcard> createEntity(Creditcard creditcard) {
+		
+	   if(creditcard.getDebitCardPay()!=null && creditcard.getTypeOpe().equalsIgnoreCase("Pago") ) {
+		DebitMovementDTO debit= new DebitMovementDTO();
+		debit.setAmountMov(creditcard.getAmountOpe());
+		debit.setDesMov(creditcard.getDescription());
+		debit.setCardNumDebit(creditcard.getDebitCardPay());
+		debit.setTypeOper( creditcard.getTypeOpe());
+		transactionServiceClient.updateBalanceAccountsByCardDebitDet(debit).subscribe();   
+	   }
+	   creditcard.setDateOpe( new Date() );
 	   return creditcardRep.insert(creditcard);
 	}
 
@@ -64,11 +82,24 @@ public class CreditcardServiceImpl implements ICreditcardService{
 				 .flatMap(item-> creditcardRep.deleteById(id));
 	}
 	
-	//Consultar todos los movimientos e un producto bancario que tiene un cliente 
+	
+	/**
+	 *Consultar todos los movimientos e un producto bancario que tiene un cliente
+	 */
 	@Override
 	public Flux<Creditcard> getCreditcards(String numdoc) {
-		// TODO Auto-generated method stub
 		return creditcardRep.findByNumDoc(numdoc);
 	}
+
+	
+	/**
+	 * Lista los 10 ultimos movimietos de la tarjeta de credito por num doc
+	 */
+	@Override
+	public Flux<Creditcard> listTop10MovementCredCard(String numdoc) {
+		return creditcardRep.findTop10ByNumDocOrderByDateOpeDesc(numdoc);
+	}
+	
+	
 	
 }

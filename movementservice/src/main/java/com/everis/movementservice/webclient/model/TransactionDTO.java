@@ -1,4 +1,4 @@
-package com.everis.transactionservice.dto;
+package com.everis.movementservice.webclient.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -7,23 +7,17 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.everis.transactionservice.entity.Customer;
-import com.everis.transactionservice.entity.Product;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 
 @Getter
-@Setter
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "transaction")
-public class ResumeDTO implements Serializable {
+public class TransactionDTO implements Serializable {
 	/**
 	 * 
 	 */
@@ -38,11 +32,9 @@ public class ResumeDTO implements Serializable {
     private String typeTra;
 	@Field(name = "limit_credit")
     private double limitCredit;
-    private double balance;
+    private double balance;//saldo
     @Field(name = "out_credit")
     private double outCredit;
-    private Customer customer;
-    private Product product;
     @Field(name = "desc_tra")
     private String descTra;
     private long status;
@@ -57,9 +49,7 @@ public class ResumeDTO implements Serializable {
     
     @Field(name = "card_num")
     private String cardNum;
+    
     @Field(name = "credit_cod")
     private String creditCod;
-    
-   
-	
 }

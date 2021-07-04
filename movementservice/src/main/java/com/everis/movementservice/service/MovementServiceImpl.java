@@ -15,6 +15,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 import com.everis.movementservice.entity.Movement;
 import com.everis.movementservice.exception.EntityNotFoundException;
 import com.everis.movementservice.repository.IMovementRepository;
+import com.everis.movementservice.webclient.TransactionServiceClient;
+import com.everis.movementservice.webclient.model.DebitMovementDTO;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -31,6 +33,10 @@ public class MovementServiceImpl implements IMovementService {
 	
 	@Autowired
 	private IMovementRepository movementRep;
+	
+	@Autowired
+	private TransactionServiceClient transactionServiceClient;
+	
 	private final ReactiveMongoTemplate mongoTemplate;
 
     @Autowired
@@ -52,7 +58,25 @@ public class MovementServiceImpl implements IMovementService {
 
 	@Override
 	public Mono<Movement> createEntity(Movement movement) {
-	   return movementRep.insert(movement);
+	   //se actualiza el saldo en las transacciones
+		if(movement.getTypeMov().equals("D")) {//deposito
+			transactionServiceClient.updateTransaction(movement.getNumAccount(),
+					movement.getAmount(),"+").subscribe();
+		}else {//retiro
+			if(movement.getDebitCardPay() == null) {
+				transactionServiceClient.updateTransaction(movement.getNumAccount(),
+						movement.getAmount(),"-").subscribe();
+			}else {
+				DebitMovementDTO debit=new DebitMovementDTO();
+				debit.setCardNumDebit(movement.getDebitCardPay());
+				debit.setDesMov(movement.getDescription());
+				debit.setAmountMov(movement.getAmount());
+				debit.setTypeOper(movement.getTypeMov());
+				transactionServiceClient.updateBalanceAccountsByCardDebitDet(debit).subscribe();
+			}
+		}
+		
+	    return movementRep.insert(movement);
 	}
 
 	@Override

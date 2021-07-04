@@ -30,9 +30,13 @@ public class Movement implements Serializable{
     private String description;
     @Field(name = "num_account")
     private String numAccount;
-    private long amount;
+    private Double amount;
     private Date date;
     @Field(name = "type_mov")
-    private String typeMOV;
+    private String typeMov;
     private long status;
+    
+    @Field(name = "debit_card_pay")
+    private String debitCardPay;
+    
 }

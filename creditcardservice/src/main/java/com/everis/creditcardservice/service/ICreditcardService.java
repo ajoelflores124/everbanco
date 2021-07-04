@@ -7,4 +7,5 @@ import reactor.core.publisher.Flux;
 public interface ICreditcardService extends IMaintanceService<Creditcard>{
 	
 	public Flux<Creditcard> getCreditcards(String numdoc);
+	public Flux<Creditcard> listTop10MovementCredCard(String numdoc);
 }

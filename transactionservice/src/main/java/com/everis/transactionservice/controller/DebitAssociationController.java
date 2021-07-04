@@ -54,4 +54,15 @@ public class DebitAssociationController {
 		return debitAssociationService.deleteEntity(id);
 	}
 
+	@GetMapping("/find-account-main/{cardDebit}")
+	public Mono<DebitAssociation> getAccountMainByCardDebit(@PathVariable String cardDebit){
+		return debitAssociationService.findAccountMainByCardDebit(cardDebit);
+	}
+	
+	@GetMapping("/list-accounts/{cardDebit}")
+	public Flux<DebitAssociation> listAccounts(@PathVariable String cardDebit){
+		return debitAssociationService.listAccountsByCardDebit(cardDebit);
+	}
+	
+	
 }

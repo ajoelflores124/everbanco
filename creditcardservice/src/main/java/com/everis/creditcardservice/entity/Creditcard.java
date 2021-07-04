@@ -32,11 +32,16 @@ public class Creditcard implements Serializable{
     private String description;
     private long status;
     @Field(name = "amount_ope")
-    private long amountOpe;
+    private Double amountOpe;
     @Field(name = "num_card")
     private String numCard;
     @Field(name = "type_ope")
     private String typeOpe;
     @Field(name = "date_ope")
     private Date dateOpe;
+    
+    @Field(name = "debit_card_pay")
+    private String debitCardPay;
+    @Field(name = "num_doc_pay")
+    private String numDocPay;
 }

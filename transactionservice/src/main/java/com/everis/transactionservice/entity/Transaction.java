@@ -53,4 +53,7 @@ public class Transaction implements Serializable {
     
     @Field(name = "card_num")
     private String cardNum;
+    
+    @Field(name = "credit_cod")
+    private String creditCod;
 }

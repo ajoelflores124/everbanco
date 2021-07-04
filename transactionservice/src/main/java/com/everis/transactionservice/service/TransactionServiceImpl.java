@@ -15,12 +15,15 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import com.everis.transactionservice.dto.ResumeDTO;
 import com.everis.transactionservice.entity.Customer;
 import com.everis.transactionservice.entity.Product;
 import com.everis.transactionservice.entity.Representative;
 import com.everis.transactionservice.entity.Transaction;
 import com.everis.transactionservice.exception.EntityNotFoundException;
 import com.everis.transactionservice.repository.ITransactionRepository;
+import com.everis.transactionservice.webclient.TransactionServiceClient;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -105,8 +108,20 @@ public class TransactionServiceImpl implements ITransactionService {
 	@Value("${repres.id.type.firmante}")
 	private String represIdTypeFirmante;
 	
+	@Value("${url.apigateway.service}")
+	private String urlApiGatewayService;
+	
 	@Autowired
 	private ITransactionRepository transactionRep;
+	@Autowired
+	private IDebitAssociationService debitAssociationService;
+	@Autowired
+	private IResumeService resumenService;
+	
+	@Autowired
+	private TransactionServiceClient transactionServiceClient;
+	
+	
 	private final ReactiveMongoTemplate mongoTemplate;
 
     @Autowired
@@ -129,8 +144,11 @@ public class TransactionServiceImpl implements ITransactionService {
 
 	@Override
 	public Mono<Transaction> createEntity(Transaction transaction) throws Exception {
-		Customer customer = this.getCustomerByNumDoc(transaction.getCustomer().getNumDoc());
-		Product product= this.getProductByIdProduct(transaction.getProduct().getIdProduct());
+		//Customer customer = this.getCustomerByNumDoc(transaction.getCustomer().getNumDoc());
+		Customer customer = transactionServiceClient.getCustomerByNumDoc(transaction.getCustomer().getNumDoc());
+		//Product product= this.getProductByIdProduct(transaction.getProduct().getIdProduct());
+		Product product = transactionServiceClient.getProductByIdProduct(transaction.getProduct().getIdProduct());
+		
 		transaction.setCustomer(customer);
 		transaction.setProduct(product);
 		System.out.println(" type_customer=> " + customerTypePersonal);
@@ -190,34 +208,11 @@ public class TransactionServiceImpl implements ITransactionService {
 	}
 
 	@Override
-	public Customer getCustomerByNumDoc(String numDoc) {
-		WebClient webClient = WebClient.create(urlCustomerService);
-		System.out.println("num_doc=>"+ numDoc);
-	    return  webClient.get()
-	    		.uri("/customer/find-by-numdoc/{numdoc}",numDoc)
-	    		.retrieve()
-	    		.bodyToMono(Customer.class)
-	    		.switchIfEmpty(Mono.error( new EntityNotFoundException(msgNotFound) ))
-	    		.share().block();
-	}
-
-	@Override
-	public Product getProductByIdProduct(String idProduct) {
-		WebClient webClient = WebClient.create(urlProductService);
-		System.out.println("idProduct=>"+ idProduct);
-	    return  webClient.get()
-	    		.uri("/product/find-by-product/{idProduct}",idProduct)
-	    		.retrieve()
-	    		.bodyToMono(Product.class)
-	    		.switchIfEmpty(Mono.error( new EntityNotFoundException(msgNotFound) ))
-	    		.share().block();
-	}
-	
-	@Override
 	public Representative[] getRepresentativesByNumDocRep(Representative[] representatives) {
 		List<Representative> listaRep= Arrays.asList(representatives);
 		List<Representative> listaRepNueva= new ArrayList<>();
-		listaRepNueva = listaRep.stream().map(r-> getDataRepresentative(r)).collect(Collectors.toList());
+		//listaRepNueva = listaRep.stream().map(r-> getDataRepresentative(r)).collect(Collectors.toList());
+		listaRepNueva = listaRep.stream().map(r-> transactionServiceClient.getDataRepresentative(r)).collect(Collectors.toList());
 		Representative[] rep_ar= new Representative[listaRepNueva.size()];
 		return listaRepNueva.toArray(rep_ar);
 	}
@@ -232,20 +227,6 @@ public class TransactionServiceImpl implements ITransactionService {
 			return false;
 		
 		return true;
-	}
-	
-	@Override
-	public Representative getDataRepresentative(Representative rep) {
-		WebClient webClient = WebClient.create(urlRepresentativeService);
-		Representative represetante=  webClient.get()
-	    		.uri("/representative/find-by-numdoc/{numDocRep}",rep.getNumDocRep())
-	    		.retrieve()
-	    		.bodyToMono(Representative.class)
-	    		.switchIfEmpty(Mono.error( new EntityNotFoundException(msgNotFound) ))
-	    		.share().block();
-		represetante.setTypeRep(rep.getTypeRep());
-		
-		return represetante;
 	}
 	
 	@Override
@@ -285,6 +266,53 @@ public class TransactionServiceImpl implements ITransactionService {
 		return transactionRep.findByNumAccount(numAcc)
 				.doOnNext(e-> e.setBalance( oper.equals("+")?e.getBalance()+balance: e.getBalance()-balance))
 				.flatMap(transactionRep::save);
-	}	
+	}
+
+	@Override
+	public Flux<ResumeDTO> updateBalanceAccountsByCardDebit(String cardDebit, Double balance) {
+		//buscamos la cuenta principal asociada al debito
+		Mono<Transaction> transaction= debitAssociationService.findAccountMainByCardDebit(cardDebit)
+				.flatMap(e-> transactionRep.findByNumAccount(e.getNumAccAsoc())
+						.doOnNext(t-> t.setBalance( t.getBalance() - balance )) );
+		//se analiza la cuenta principal si es sufiente caso cantrario se aplicara a las demas cuentas bancarias
+		Transaction tr = transaction.share().block();
+		double b= tr.getBalance();
+		if(b<0) {
+			tr.setBalance(0);
+			//analizar la demas cuentas
+			this.updateBalanceAccounts(cardDebit, b);
+		}
+		transactionRep.save(tr).subscribe();
+
+		return resumenService.resumeByCustomer( tr.getCustomer().getNumDoc() );
+	}
+	
+	private void updateBalanceAccounts(String cardDebit, Double balance){
+		Double b= balance;
+		Flux<Transaction> lista=debitAssociationService.listAccountsByCardDebit(cardDebit)
+				.flatMap(e-> transactionRep.findByNumAccount(e.getNumAccAsoc() ));
+
+		List<Transaction> listaTransactions= lista.collectList().share().block();
+		for (Transaction t : listaTransactions) {
+			System.out.println(" balance accountsss "+ t.getBalance());
+			b = t.getBalance() - (Math.abs(b));
+			if(b < 0 ) {
+				t.setBalance(0);
+				transactionRep.save(t).subscribe();
+			}else {
+				t.setBalance(b);
+				transactionRep.save(t).subscribe();
+				break;
+			}
+		}		
+	}
+
+	@Override
+	public Mono<Transaction> getBalanceAccountMain(String cardDebit) {
+		return debitAssociationService.findAccountMainByCardDebit(cardDebit)
+				.flatMap(e-> transactionRep.findByNumAccount(e.getNumAccAsoc()));
+		
+	}
+	
 	
 }

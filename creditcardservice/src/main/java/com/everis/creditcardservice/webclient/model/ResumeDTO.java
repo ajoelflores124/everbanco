@@ -1,4 +1,4 @@
-package com.everis.transactionservice.dto;
+package com.everis.creditcardservice.webclient.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -7,8 +7,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.everis.transactionservice.entity.Customer;
-import com.everis.transactionservice.entity.Product;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,7 +20,6 @@ import lombok.Setter;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "transaction")
 public class ResumeDTO implements Serializable {
 	/**
 	 * 
@@ -41,25 +38,12 @@ public class ResumeDTO implements Serializable {
     private double balance;
     @Field(name = "out_credit")
     private double outCredit;
-    private Customer customer;
-    private Product product;
     @Field(name = "desc_tra")
     private String descTra;
     private long status;
     @Field(name = "amount_loan")
     private double amountLoan;
-    @Field(name = "date_pay_next")
-    private Date datePayNext;
-    @Field(name = "closed_account")
-    private boolean closedAccount;
-    @Field(name = "debt_status")
-    private String debtStatus;
     
-    @Field(name = "card_num")
-    private String cardNum;
-    @Field(name = "credit_cod")
-    private String creditCod;
-    
-   
+  
 	
 }

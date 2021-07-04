@@ -53,4 +53,9 @@ public class CredictcardController {
 	public Flux<Creditcard> getCredits(@PathVariable String id){
 		return creditcardService.getCreditcards(id);
 	}
+	
+	@GetMapping("/list-mov/{numdoc}")
+	public Flux<Creditcard> listaTop10MovementCreditCard(@PathVariable String numdoc){
+		return creditcardService.listTop10MovementCredCard(numdoc);
+	}
 }
