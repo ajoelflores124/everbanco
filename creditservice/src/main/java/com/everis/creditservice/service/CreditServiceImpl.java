@@ -85,7 +85,7 @@ public class CreditServiceImpl implements ICreditService{
 				 .flatMap(item-> creditRep.deleteById(id));
 	}
 
-	//Consultar todos los movimientos e un producto bancario que tiene un cliente 
+	//Consultar todos los movimientos de un producto bancario que tiene un cliente 
 	@Override
 	public Flux<Credit> getCredits(String numdoc) {
 		return creditRep.findByNumDoc(numdoc);

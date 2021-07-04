@@ -49,9 +49,9 @@ public class CreditController {
 		return creditService.deleteEntity(id);
 	}
 	
-	@GetMapping("/numDoc/{id}")
-	public Flux<Credit> getCredits(@PathVariable String id){
-		return creditService.getCredits(id);
+	@GetMapping("/list-cred-movement/{numdoc}")
+	public Flux<Credit> getCredits(@PathVariable String numdoc){
+		return creditService.getCredits(numdoc);
 	}
 	
 	

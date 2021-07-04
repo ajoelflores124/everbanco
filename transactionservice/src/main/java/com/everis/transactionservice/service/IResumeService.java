@@ -24,4 +24,5 @@ public interface IResumeService {
 	 * @return 
 	 */
 	public Flux<ReportProductDTO> reportProductoByTime(String startDate, String endDate);
+	
 }

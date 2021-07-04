@@ -2,6 +2,7 @@ package com.everis.transactionservice.service;
 
 import java.util.List;
 
+import com.everis.transactionservice.dto.BalanceMainDTO;
 import com.everis.transactionservice.dto.ResumeDTO;
 import com.everis.transactionservice.entity.Customer;
 import com.everis.transactionservice.entity.Product;
@@ -23,5 +24,5 @@ public interface ITransactionService extends IMaintenanceService<Transaction> {
 	public Mono<Transaction> findByNumAccount(String numAcc );
 	public Mono<Transaction> updateBalance(String numAcc, Double balance, String oper );
 	public Flux<ResumeDTO> updateBalanceAccountsByCardDebit(String cardDebit,Double balance);
-	public Mono<Transaction> getBalanceAccountMain(String cardDebit);
+	public Mono<BalanceMainDTO> getBalanceAccountMain(String cardDebit);
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.everis.transactionservice.dto.BalanceMainDTO;
 import com.everis.transactionservice.dto.ResumeDTO;
 import com.everis.transactionservice.entity.DebitAssociation;
 import com.everis.transactionservice.entity.DebitMovement;
@@ -78,7 +79,7 @@ public class TransactionController {
 	}
 	
 	@GetMapping("/balance-main-account/{cardDebit}")
-	public Mono<Transaction> listAccounts(@PathVariable String cardDebit){
+	public Mono<BalanceMainDTO> listAccounts(@PathVariable String cardDebit){
 		return transactionService.getBalanceAccountMain(cardDebit);
 	}
 

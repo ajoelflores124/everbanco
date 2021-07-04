@@ -15,6 +15,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import com.everis.transactionservice.dto.BalanceMainDTO;
 import com.everis.transactionservice.dto.ResumeDTO;
 import com.everis.transactionservice.entity.Customer;
 import com.everis.transactionservice.entity.Product;
@@ -308,10 +309,16 @@ public class TransactionServiceImpl implements ITransactionService {
 	}
 
 	@Override
-	public Mono<Transaction> getBalanceAccountMain(String cardDebit) {
-		return debitAssociationService.findAccountMainByCardDebit(cardDebit)
-				.flatMap(e-> transactionRep.findByNumAccount(e.getNumAccAsoc()));
+	public Mono<BalanceMainDTO> getBalanceAccountMain(String cardDebit) {
 		
+		 Transaction transaction= debitAssociationService.findAccountMainByCardDebit(cardDebit)
+				.flatMap(e-> transactionRep.findByNumAccount(e.getNumAccAsoc())).share().block();
+		 
+		 BalanceMainDTO b=new BalanceMainDTO();
+		 b.setId(transaction.getId());
+		 b.setBalance(transaction.getBalance());
+		 b.setStatus(transaction.getStatus());
+		 return Mono.just(b);
 	}
 	
 	
