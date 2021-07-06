@@ -4,37 +4,185 @@
   },
   "num_doc": "12354678",
   "description": "Ahorro",
-  "num_account": "9638527419638527",
+  "num_account": "10101010",
   "amount": 1000,
   "date": {
     "$date": "2021-06-18T05:00:00Z"
-  },
-  "type_mov": "D",
-  "status": 1
-},{
-  "_id": {
-    "$oid": "60d0db1c215e532518cbfc52"
-  },
-  "num_doc": "12354678",
-  "description": "Ahorro",
-  "num_account": "9638527419638527",
-  "amount": 100,
-  "date": {
-    "$date": "2021-06-21T05:00:00Z"
   },
   "type_mov": "R",
   "status": 1
 },{
   "_id": {
-    "$oid": "60d0f132215e532518cbfc53"
+    "$oid": "60dfe0c428112d69e7430794"
   },
-  "num_doc": "10101010",
+  "num_doc": "12345678",
   "description": "Ahorro",
-  "num_account": "3216549873216549",
-  "amount": 500,
+  "num_account": "2021-1002",
+  "amount": 100,
   "date": {
-    "$date": "2021-06-21T05:00:00Z"
+    "$date": "2021-07-02T05:00:00Z"
   },
   "type_mov": "D",
-  "status": 1
+  "status": 1,
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60dfe11f156eef30cad8847f"
+  },
+  "num_doc": "12345678",
+  "description": "Ahorro",
+  "num_account": "2021-1002",
+  "amount": 150.5,
+  "date": {
+    "$date": "2021-07-02T05:00:00Z"
+  },
+  "type_mov": "D",
+  "status": 1,
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60dfe37b9e3b3754169953e6"
+  },
+  "num_doc": "12345678",
+  "description": "Ahorro",
+  "num_account": "2021-1002",
+  "amount": 0.5,
+  "date": {
+    "$date": "2021-07-02T05:00:00Z"
+  },
+  "type_mov": "R",
+  "status": 1,
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60dfe4219e3b3754169953e7"
+  },
+  "num_doc": "12345678",
+  "description": "Ahorro",
+  "num_account": "2021-1002",
+  "amount": 100,
+  "date": {
+    "$date": "2021-07-02T05:00:00Z"
+  },
+  "type_mov": "D",
+  "status": 1,
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60dfe4519e3b3754169953e8"
+  },
+  "num_doc": "12345678",
+  "description": "Ahorro",
+  "num_account": "2021-1002",
+  "amount": 100,
+  "date": {
+    "$date": "2021-07-02T05:00:00Z"
+  },
+  "type_mov": "R",
+  "status": 1,
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60dfe45c9e3b3754169953e9"
+  },
+  "num_doc": "12345678",
+  "description": "Ahorro",
+  "num_account": "2021-1002",
+  "amount": 200,
+  "date": {
+    "$date": "2021-07-02T05:00:00Z"
+  },
+  "type_mov": "R",
+  "status": 1,
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60dfe46d9e3b3754169953ea"
+  },
+  "num_doc": "12345678",
+  "description": "Ahorro",
+  "num_account": "2021-1002",
+  "amount": 50,
+  "date": {
+    "$date": "2021-07-02T05:00:00Z"
+  },
+  "type_mov": "R",
+  "status": 1,
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60dfe4909e3b3754169953eb"
+  },
+  "num_doc": "12345678",
+  "description": "Ahorro",
+  "num_account": "2021-1002",
+  "amount": 150,
+  "date": {
+    "$date": "2021-07-02T05:00:00Z"
+  },
+  "type_mov": "R",
+  "status": 1,
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60e0bf720133821a98ec1746"
+  },
+  "num_doc": "12345678",
+  "description": "Ahorro",
+  "num_account": "2021-1002",
+  "amount": 400,
+  "date": {
+    "$date": "2021-07-02T05:00:00Z"
+  },
+  "type_mov": "D",
+  "status": 1,
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60e0e9597378932cb6d3c4df"
+  },
+  "num_doc": "12345678",
+  "description": "Ahorro",
+  "num_account": "2021-1002",
+  "amount": 400,
+  "date": {
+    "$date": "2021-07-02T05:00:00Z"
+  },
+  "type_mov": "D",
+  "status": 1,
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60e0e9997378932cb6d3c4e0"
+  },
+  "num_doc": "12345678",
+  "description": "retiro de cnta de ahorros con  tarjeta de debito ",
+  "num_account": "2021-1002",
+  "amount": 150,
+  "date": {
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "type_mov": "R",
+  "status": 1,
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.movementservice.entity.Movement"
+},{
+  "_id": {
+    "$oid": "60e1253c7378932cb6d3c4e1"
+  },
+  "num_doc": "12345678",
+  "description": "Ahorro",
+  "num_account": "2021-1002",
+  "amount": 400,
+  "date": {
+    "$date": "2021-07-02T05:00:00Z"
+  },
+  "type_mov": "D",
+  "status": 1,
+  "_class": "com.everis.movementservice.entity.Movement"
 }]

@@ -126,8 +126,9 @@ public class TransactionServiceImpl implements ITransactionService {
 	private final ReactiveMongoTemplate mongoTemplate;
 
     @Autowired
-    public TransactionServiceImpl(ReactiveMongoTemplate mongoTemplate) {
+    public TransactionServiceImpl(ReactiveMongoTemplate mongoTemplate, ITransactionRepository transactionRep) {
         this.mongoTemplate = mongoTemplate;
+        this.transactionRep = transactionRep;
     }
     
     //WebClient webClient = WebClient.create(urlCustomerService);

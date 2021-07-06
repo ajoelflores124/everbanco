@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "60de65fcc3d6a63e5f488987"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "num_acc_assoc": "2021-1001",
+  "acc_main": false,
+  "date_assoc": {
+    "$date": "2021-07-01T05:00:00Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitAssociation"
+},{
+  "_id": {
+    "$oid": "60de6632c3d6a63e5f488988"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "num_acc_assoc": "2021-1002",
+  "acc_main": true,
+  "date_assoc": {
+    "$date": "2021-07-01T05:00:00Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitAssociation"
+}]

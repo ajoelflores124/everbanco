@@ -1,0 +1,191 @@
+[{
+  "_id": {
+    "$oid": "60e0df0536a09b4bda75e083"
+  },
+  "card_num_debit": "2020-3030-4040-1234",
+  "des_mov": "pago de tarjeta de credito",
+  "mount_mov": 100,
+  "date_mov": {
+    "$date": "2021-07-03T22:04:53.264Z"
+  },
+  "status": 0,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e0e19813105110cbb54859"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "mount_mov": 100,
+  "date_mov": {
+    "$date": "2021-07-03T22:15:52.801Z"
+  },
+  "status": 0,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e0e20713105110cbb5485a"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "mount_mov": 50,
+  "date_mov": {
+    "$date": "2021-07-03T22:17:43.568Z"
+  },
+  "status": 0,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e0e6164bdfc6303798b34f"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Cuota Mes de Julio pago de un credito personal por debit",
+  "type_oper": "Pago",
+  "amount_mov": 30,
+  "date_mov": {
+    "$date": "2021-07-03T22:35:02.821Z"
+  },
+  "status": 0,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e0e99915b5c071b6beebfa"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "retiro de cnta de ahorros con  tarjeta de debito ",
+  "type_oper": "R",
+  "amount_mov": 150,
+  "date_mov": {
+    "$date": "2021-07-03T22:50:01.415Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e0ec0515b5c071b6beebfb"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Pago del mes Julio - Tarjeta Ripley",
+  "type_oper": "Pago",
+  "amount_mov": 30,
+  "date_mov": {
+    "$date": "2021-07-03T23:00:21.212Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e125f3bc7d387454ad6792"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Cuota Mes de Julio pago de un credito personal por debit",
+  "type_oper": "Pago",
+  "amount_mov": 40,
+  "date_mov": {
+    "$date": "2021-07-04T03:07:31.146Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e125f8bc7d387454ad6793"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Cuota Mes de Julio pago de un credito personal por debit",
+  "type_oper": "Pago",
+  "amount_mov": 60,
+  "date_mov": {
+    "$date": "2021-07-04T03:07:36.684Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e1261cbc7d387454ad6794"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Pago del mes Julio - Tarjeta Green",
+  "type_oper": "Pago",
+  "amount_mov": 70,
+  "date_mov": {
+    "$date": "2021-07-04T03:08:12.835Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e12652bc7d387454ad6795"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Pago del mes Julio - Tarjeta OHHH",
+  "type_oper": "Pago",
+  "amount_mov": 80,
+  "date_mov": {
+    "$date": "2021-07-04T03:09:06.072Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e12662bc7d387454ad6796"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Pago del mes Julio - Tarjeta Wong",
+  "type_oper": "Pago",
+  "amount_mov": 90,
+  "date_mov": {
+    "$date": "2021-07-04T03:09:22.333Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e1267cbc7d387454ad6797"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Cuota Mes de Julio pago de un credito personal por debit",
+  "type_oper": "Pago",
+  "amount_mov": 10,
+  "date_mov": {
+    "$date": "2021-07-04T03:09:48.730Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e12689bc7d387454ad6798"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Cuota Mes de Julio pago de un credito personal por debit",
+  "type_oper": "Pago",
+  "amount_mov": 25,
+  "date_mov": {
+    "$date": "2021-07-04T03:10:01.954Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e12692bc7d387454ad6799"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Cuota Mes de Julio pago de un credito personal por debit",
+  "type_oper": "Pago",
+  "amount_mov": 55,
+  "date_mov": {
+    "$date": "2021-07-04T03:10:10.843Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+},{
+  "_id": {
+    "$oid": "60e135abdb8e46754b18e53c"
+  },
+  "card_num_debit": "2525-2626-2727-2828",
+  "des_mov": "Cuota Mes de Julio pago de un credito personal por debit",
+  "type_oper": "Pago",
+  "amount_mov": 65,
+  "date_mov": {
+    "$date": "2021-07-04T04:14:35.283Z"
+  },
+  "status": 1,
+  "_class": "com.everis.transactionservice.entity.DebitMovement"
+}]

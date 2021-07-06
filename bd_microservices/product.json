@@ -70,4 +70,17 @@
   "limit_mov": null,
   "credit": 1,
   "status": 1
+},{
+  "_id": {
+    "$oid": "60de90072f0ebc7cc32f5a86"
+  },
+  "id_product": "700",
+  "name_product": "Tarjeta de Debito",
+  "type_product": "Pasivo",
+  "description": "Tarjeta de Debito para asocionar otras cuentas",
+  "free_comission": false,
+  "limit_mov": 0,
+  "credit": 1,
+  "status": 1,
+  "_class": "com.everis.productservice.entity.Product"
 }]

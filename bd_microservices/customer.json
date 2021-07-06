@@ -9,7 +9,7 @@
   "email": "jperez@gmail.com",
   "address": "Dir. A,B,C #234 Lima",
   "status": 1,
-  "type_customer": "P,E"
+  "type_customer": "P"
 },{
   "_id": {
     "$oid": "60cebb0cc4c8d4708f48cdc0"
@@ -87,5 +87,18 @@
   "address": "La Molina Lima",
   "status": 1,
   "type_customer": "E",
+  "_class": "com.everis.customerservice.entity.Customer"
+},{
+  "_id": {
+    "$oid": "60d1142641d9b415a515cc40"
+  },
+  "num_doc": "50505050",
+  "name": "Juan",
+  "lastname": "Perez nuevo editad",
+  "phone": "987465123",
+  "email": "jpereznueveditado@gmail.com",
+  "address": "Dir. A,B,C #234 Lima",
+  "status": 1,
+  "type_customer": "P",
   "_class": "com.everis.customerservice.entity.Customer"
 }]

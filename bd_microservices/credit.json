@@ -2,38 +2,196 @@
   "_id": {
     "$oid": "60ccf7b221bade1d3fb7110d"
   },
-  "num_doc": "12354678",
+  "num_doc": "20202020",
   "description": "Cuota Mes de Junio",
   "status": 1,
   "amount_pay": 1000,
   "date_pay": {
     "$date": "2021-06-18T05:00:00Z"
   },
-  "num_tra": 1
+  "debit_card_pay": "null",
+  "num_doc_pay": "null",
+  "credit_cod": "12345678"
 },{
   "_id": {
-    "$oid": "60d11577574eba29560707f0"
+    "$oid": "60dffcfb83c8cd1f364b1942"
   },
   "num_doc": "12354678",
   "description": "Cuota Mes de Julio",
   "status": 1,
-  "amount_pay": 1100,
+  "amount_pay": 50,
   "date_pay": {
-    "$date": "2021-07-21T00:00:00Z"
+    "$date": "2021-07-03T00:00:00Z"
   },
-  "numTra": 1,
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
   "_class": "com.everis.creditservice.entity.Credit"
 },{
   "_id": {
-    "$oid": "60d116f7f60c6d5fbb3459c0"
+    "$oid": "60dffd6983c8cd1f364b1943"
   },
   "num_doc": "12354678",
-  "description": "Cuota Mes de Abril",
+  "description": "Cuota Mes de Julio",
   "status": 1,
-  "amount_pay": 500,
+  "amount_pay": 50,
   "date_pay": {
-    "$date": "2021-05-21T00:00:00Z"
+    "$date": "2021-07-03T00:00:00Z"
   },
-  "numTra": 1,
+  "credit_cod": "10001",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e0c15e16e99c6625bf05f9"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Julio pago de un credito personal",
+  "status": 1,
+  "amount_pay": 100,
+  "date_pay": {
+    "$date": "2021-07-03T00:00:00Z"
+  },
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e0c8d816e99c6625bf05fa"
+  },
+  "num_doc": "30303030",
+  "description": "Cuota Mes de Julio",
+  "status": 1,
+  "amount_pay": 50,
+  "date_pay": {
+    "$date": "2021-07-03T00:00:00Z"
+  },
+  "credit_cod": "10002",
+  "debit_card_pay": "2525-2626-2727-2828",
+  "num_doc_pay": "12345678",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e0e19816e99c6625bf05fb"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Julio pago de un credito personal",
+  "status": 1,
+  "amount_pay": 100,
+  "date_pay": {
+    "$date": "2021-07-03T00:00:00Z"
+  },
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e0e20716e99c6625bf05fc"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Julio pago de un credito personal",
+  "status": 1,
+  "amount_pay": 50,
+  "date_pay": {
+    "$date": "2021-07-03T00:00:00Z"
+  },
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e0e616dcba2a47d26955e5"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Julio pago de un credito personal por debit",
+  "status": 1,
+  "amount_pay": 30,
+  "date_pay": {
+    "$date": "2021-07-03T00:00:00Z"
+  },
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e125f3dcba2a47d26955e6"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Julio pago de un credito personal por debit",
+  "status": 1,
+  "amount_pay": 40,
+  "date_pay": {
+    "$date": "2021-07-03T00:00:00Z"
+  },
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e125f8dcba2a47d26955e7"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Julio pago de un credito personal por debit",
+  "status": 1,
+  "amount_pay": 60,
+  "date_pay": {
+    "$date": "2021-07-03T00:00:00Z"
+  },
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e1267cdcba2a47d26955e8"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Julio pago de un credito personal por debit",
+  "status": 1,
+  "amount_pay": 10,
+  "date_pay": {
+    "$date": "2021-07-03T00:00:00Z"
+  },
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e12689dcba2a47d26955e9"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Julio pago de un credito personal por debit",
+  "status": 1,
+  "amount_pay": 25,
+  "date_pay": {
+    "$date": "2021-07-03T00:00:00Z"
+  },
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e12692dcba2a47d26955ea"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Julio pago de un credito personal por debit",
+  "status": 1,
+  "amount_pay": 55,
+  "date_pay": {
+    "$date": "2021-07-03T00:00:00Z"
+  },
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditservice.entity.Credit"
+},{
+  "_id": {
+    "$oid": "60e135ab3672853185c2a62a"
+  },
+  "num_doc": "12354678",
+  "description": "Cuota Mes de Julio pago de un credito personal por debit",
+  "status": 1,
+  "amount_pay": 65,
+  "date_pay": {
+    "$date": "2021-07-04T04:14:35.168Z"
+  },
+  "credit_cod": "10001",
+  "debit_card_pay": "2525-2626-2727-2828",
   "_class": "com.everis.creditservice.entity.Credit"
 }]

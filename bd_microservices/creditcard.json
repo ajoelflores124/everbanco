@@ -7,21 +7,130 @@
   "status": 1,
   "amount_ope": 1000,
   "num_card": "10101010",
-  "type_ope": "Cargo,Pago",
+  "type_ope": "Pago",
   "date_ope": {
     "$date": "2021-06-18T05:00:00Z"
-  }
+  },
+  "debit_card_pay": "null",
+  "num_doc_pay": "null"
 },{
   "_id": {
-    "$oid": "60d1189d215e532518cbfc54"
+    "$oid": "60de02bdcc801322fce47386"
   },
   "num_doc": "12354678",
+  "description": "Consumo supermercados Metro",
+  "status": 1,
+  "amount_ope": 100,
+  "num_card": "10101010",
+  "type_ope": "Cargo",
+  "date_ope": {
+    "$date": "2021-07-01T05:00:00Z"
+  },
+  "debit_card_pay": "null",
+  "num_doc_pay": "null"
+},{
+  "_id": {
+    "$oid": "60e0a7377c97235ef81d1eb1"
+  },
+  "num_doc": "12354678",
+  "description": "Pago del mes Julio - Tarjeta CRM",
+  "status": 1,
+  "amount_ope": 50,
+  "num_card": "1010-2020-3030-4040",
+  "type_ope": "Pago",
+  "date_ope": {
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditcardservice.entity.Creditcard"
+},{
+  "_id": {
+    "$oid": "60e0d4507c97235ef81d1eb2"
+  },
+  "num_doc": "30303030",
   "description": "Pago del mes Julio - Tarjeta OH",
   "status": 1,
-  "amount_ope": 500,
-  "num_card": "10101010",
-  "type_ope": "Cargo,Pago",
+  "amount_ope": 100,
+  "num_card": "3030-3131-3232-3333",
+  "type_ope": "Pago",
   "date_ope": {
-    "$date": "2021-06-21T05:00:00Z"
-  }
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "debit_card_pay": "2525-2626-2727-2828",
+  "num_doc_pay": "12345678",
+  "_class": "com.everis.creditcardservice.entity.Creditcard"
+},{
+  "_id": {
+    "$oid": "60e0ec05f2b150405d7bfb51"
+  },
+  "num_doc": "12354678",
+  "description": "Pago del mes Julio - Tarjeta Ripley",
+  "status": 1,
+  "amount_ope": 30,
+  "num_card": "1010-2020-3030-4040",
+  "type_ope": "Pago",
+  "date_ope": {
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditcardservice.entity.Creditcard"
+},{
+  "_id": {
+    "$oid": "60e1261cf2b150405d7bfb52"
+  },
+  "num_doc": "12354678",
+  "description": "Pago del mes Julio - Tarjeta Green",
+  "status": 1,
+  "amount_ope": 70,
+  "num_card": "1010-2020-3030-4040",
+  "type_ope": "Pago",
+  "date_ope": {
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditcardservice.entity.Creditcard"
+},{
+  "_id": {
+    "$oid": "60e12652f2b150405d7bfb53"
+  },
+  "num_doc": "12354678",
+  "description": "Pago del mes Julio - Tarjeta OHHH",
+  "status": 1,
+  "amount_ope": 80,
+  "num_card": "1010-2020-3030-4040",
+  "type_ope": "Pago",
+  "date_ope": {
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditcardservice.entity.Creditcard"
+},{
+  "_id": {
+    "$oid": "60e12662f2b150405d7bfb54"
+  },
+  "num_doc": "12354678",
+  "description": "Pago del mes Julio - Tarjeta Wong",
+  "status": 1,
+  "amount_ope": 90,
+  "num_card": "1010-2020-3030-4040",
+  "type_ope": "Pago",
+  "date_ope": {
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "debit_card_pay": "2525-2626-2727-2828",
+  "_class": "com.everis.creditcardservice.entity.Creditcard"
+},{
+  "_id": {
+    "$oid": "60e1351e82bbd15678c6d83b"
+  },
+  "num_doc": "12354678",
+  "description": "Consumo en la tienda Ripley",
+  "status": 1,
+  "amount_ope": 155,
+  "num_card": "10101010",
+  "type_ope": "Cargo",
+  "date_ope": {
+    "$date": "2021-07-04T04:12:14.129Z"
+  },
+  "_class": "com.everis.creditcardservice.entity.Creditcard"
 }]

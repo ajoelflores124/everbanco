@@ -1,36 +1,37 @@
 [{
   "_id": {
-    "$oid": "60ca59385b600752a5d404d7"
+    "$oid": "60de0a427888f87722a951d8"
   },
+  "num_doc_rep": "40404040",
   "name_rep": "Carlos",
-  "lastname_rep": "Dias Dias",
-  "email_rep": "cdias@gmail.com",
-  "address_rep": "av abcd 123",
-  "phone_rep": "989898123",
-  "status": "1",
-  "num_doc_rep": "30303030"
-},{
-  "_id": {
-    "$oid": "60cc2035c6bac004a93f989e"
-  },
-  "name_rep": "Hugo",
-  "lastname_rep": "Dias Dias",
-  "email_rep": "cdias@gmail.com",
+  "lastname_rep": "Nuevo Nuevo",
+  "email_rep": "cnnuevo@gmail.com",
   "address_rep": "av abcd 123",
   "phone_rep": "989898123",
   "status": 1,
-  "_class": "com.everis.representativeservice.entity.Representative",
-  "num_doc_rep": "31313131"
+  "_class": "com.everis.representativeservice.entity.Representative"
 },{
   "_id": {
-    "$oid": "60cc2044c6bac004a93f989f"
+    "$oid": "60de0a787888f87722a951d9"
   },
+  "num_doc_rep": "31313131",
   "name_rep": "Juan",
-  "lastname_rep": "Campos Dias",
-  "email_rep": "jcampos@gmail.com",
+  "lastname_rep": "campo campos",
+  "email_rep": "cnnuevo@gmail.com",
   "address_rep": "av abcd 123",
-  "phone_rep": "999999999",
+  "phone_rep": "989898123",
   "status": 1,
-  "_class": "com.everis.representativeservice.entity.Representative",
-  "num_doc_rep": "32323232"
+  "_class": "com.everis.representativeservice.entity.Representative"
+},{
+  "_id": {
+    "$oid": "60de0a887888f87722a951da"
+  },
+  "num_doc_rep": "30303030",
+  "name_rep": "Hugo",
+  "lastname_rep": "dias campos",
+  "email_rep": "cnnuevo@gmail.com",
+  "address_rep": "av abcd 123",
+  "phone_rep": "989898123",
+  "status": 1,
+  "_class": "com.everis.representativeservice.entity.Representative"
 }]

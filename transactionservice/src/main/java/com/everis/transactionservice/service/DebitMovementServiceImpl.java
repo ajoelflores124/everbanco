@@ -32,6 +32,10 @@ public class DebitMovementServiceImpl implements IDebitMovementService {
 	
 	@Autowired
 	private IDebitMovementRepository debitMovementRep;
+	
+	public DebitMovementServiceImpl(IDebitMovementRepository debitMovementRep) {
+		this.debitMovementRep = debitMovementRep;
+	}
 
 	@Override
 	public Flux<DebitMovement> findAll() {

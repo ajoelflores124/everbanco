@@ -46,7 +46,7 @@
   "date_tra": {
     "$date": "2021-06-21T05:00:00Z"
   },
-  "num_account": "10000000008",
+  "num_account": "10000000009",
   "type_tra": "Pasivo",
   "limit_credit": 0,
   "balance": 0,
@@ -169,10 +169,10 @@
   "date_tra": {
     "$date": "2021-06-21T05:00:00Z"
   },
-  "num_account": "10000000008",
+  "num_account": "2021-1001",
   "type_tra": "Pasivo",
   "limit_credit": 0,
-  "balance": 0,
+  "balance": 120,
   "out_credit": 0,
   "customer": {
     "num_doc": "12345678",
@@ -202,6 +202,7 @@
   "desc_tra": "apertura de cuenta plazo fijo personal",
   "status": 1,
   "amount_loan": 0,
+  "closed_account": false,
   "_class": "com.everis.transactionservice.entity.Transaction"
 },{
   "_id": {
@@ -210,10 +211,10 @@
   "date_tra": {
     "$date": "2021-06-21T05:00:00Z"
   },
-  "num_account": "10000000008",
+  "num_account": "2021-1002",
   "type_tra": "Pasivo",
   "limit_credit": 0,
-  "balance": 0,
+  "balance": 125,
   "out_credit": 0,
   "customer": {
     "num_doc": "12345678",
@@ -243,5 +244,734 @@
   "desc_tra": "apertura de cuenta ahorro personal",
   "status": 1,
   "amount_loan": 0,
+  "closed_account": false,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60d0c832beac15527fd41233"
+  },
+  "date_tra": {
+    "$date": "2021-06-21T05:00:00Z"
+  },
+  "num_account": "2021-1003",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 200,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Juan",
+    "lastname": "Perez",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Hugo",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente personal",
+  "status": 1,
+  "amount_loan": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60d0db1d1b41b810d22ebcc8"
+  },
+  "date_tra": {
+    "$date": "2021-06-21T05:00:00Z"
+  },
+  "num_account": "10000000008",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "10202020200",
+    "name": "Sheraton",
+    "lastname": "Hotel",
+    "type_customer": "E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Hugo",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente personal",
+  "status": 1,
+  "amount_loan": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60d0dbf21b41b810d22ebcc9"
+  },
+  "date_tra": {
+    "$date": "2021-06-21T05:00:00Z"
+  },
+  "num_account": "10000000008",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "20303030300",
+    "name": "Rosatel",
+    "lastname": "Floreria",
+    "type_customer": "E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Hugo",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente empresarial",
+  "status": 1,
+  "amount_loan": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60d0e9931b41b810d22ebcca"
+  },
+  "date_tra": {
+    "$date": "2021-06-22T05:00:00Z"
+  },
+  "num_account": "10000000008",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "20303030300",
+    "name": "Rosatel",
+    "lastname": "Floreria",
+    "type_customer": "E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Hugo",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente empresarial",
+  "status": 1,
+  "amount_loan": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60d0e9cd1b41b810d22ebccb"
+  },
+  "date_tra": {
+    "$date": "2021-06-22T05:00:00Z"
+  },
+  "num_account": "10000000010",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "20303030300",
+    "name": "Rosatel",
+    "lastname": "Floreria",
+    "type_customer": "E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Carlos",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Hugo",
+      "lastname_rep": "Dias Dias",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente empresarial",
+  "status": 1,
+  "amount_loan": 0,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60de0d9e0df5a3215815f790"
+  },
+  "date_tra": {
+    "$date": "2021-06-22T05:00:00Z"
+  },
+  "num_account": "10000000010",
+  "type_tra": "Activo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "20303030300",
+    "name": "Rosatel",
+    "lastname": "Floreria",
+    "type_customer": "E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Juan",
+      "lastname_rep": "campo campos",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "500",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Activo"
+  },
+  "desc_tra": "solicitud de un prestamo empresarial",
+  "status": 1,
+  "amount_loan": 1800,
+  "date_pay_next": {
+    "$date": "2021-07-15T00:00:00Z"
+  },
+  "closed_account": false,
+  "debt_status": "pendiente",
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60de231384f76f7993eeb04d"
+  },
+  "date_tra": {
+    "$date": "2021-06-01T05:00:00Z"
+  },
+  "num_account": "10000000010",
+  "type_tra": "Activo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "10101010",
+    "name": "Jorge",
+    "lastname": "Lopez",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "T"
+    }
+  ],
+  "product": {
+    "id_product": "400",
+    "name_product": "Personal",
+    "type_product": "Activo"
+  },
+  "desc_tra": "solicitud de un prestamo personal",
+  "status": 1,
+  "amount_loan": 1200,
+  "date_pay_next": {
+    "$date": "2021-06-30T00:00:00Z"
+  },
+  "closed_account": false,
+  "debt_status": "vencida",
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60de30759061c51933646be3"
+  },
+  "date_tra": {
+    "$date": "2021-06-22T05:00:00Z"
+  },
+  "num_account": "10000000012",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "20101010100",
+    "name": "Delfines",
+    "lastname": "Hotel",
+    "type_customer": "E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Juan",
+      "lastname_rep": "campo campos",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente empresarial",
+  "status": 1,
+  "amount_loan": 0,
+  "closed_account": false,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60de308e9061c51933646be4"
+  },
+  "date_tra": {
+    "$date": "2021-07-01T05:00:00Z"
+  },
+  "num_account": "10000000013",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "20101010100",
+    "name": "Delfines",
+    "lastname": "Hotel",
+    "type_customer": "E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Juan",
+      "lastname_rep": "campo campos",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente empresarial",
+  "status": 1,
+  "amount_loan": 0,
+  "closed_account": false,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60de309a9061c51933646be5"
+  },
+  "date_tra": {
+    "$date": "2021-07-01T05:00:00Z"
+  },
+  "num_account": "10000000014",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "20101010100",
+    "name": "Delfines",
+    "lastname": "Hotel",
+    "type_customer": "E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Juan",
+      "lastname_rep": "campo campos",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente empresarial",
+  "status": 1,
+  "amount_loan": 0,
+  "closed_account": false,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60de336d9061c51933646be6"
+  },
+  "date_tra": {
+    "$date": "2021-07-01T05:00:00Z"
+  },
+  "num_account": "10000000016",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "20101010100",
+    "name": "Delfines",
+    "lastname": "Hotel",
+    "type_customer": "E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Juan",
+      "lastname_rep": "campo campos",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente empresarial",
+  "status": 1,
+  "amount_loan": 0,
+  "closed_account": false,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60de33839061c51933646be7"
+  },
+  "date_tra": {
+    "$date": "2021-07-01T05:00:00Z"
+  },
+  "num_account": "10000000017",
+  "type_tra": "Pasivo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "20101010100",
+    "name": "Delfines",
+    "lastname": "Hotel",
+    "type_customer": "E"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "31313131",
+      "name_rep": "Juan",
+      "lastname_rep": "campo campos",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "200",
+    "name_product": "Cuenta Corriente",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "apertura de cuenta corriente empresarial",
+  "status": 1,
+  "amount_loan": 0,
+  "closed_account": false,
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60de92893e8cb17de086b3b7"
+  },
+  "date_tra": {
+    "$date": "2021-07-01T05:00:00Z"
+  },
+  "type_tra": "Activo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Juan",
+    "lastname": "Perez",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "T"
+    }
+  ],
+  "product": {
+    "id_product": "700",
+    "name_product": "Tarjeta de Debito",
+    "type_product": "Pasivo"
+  },
+  "desc_tra": "solicitud de un tarjeta de debito",
+  "status": 1,
+  "amount_loan": 0,
+  "closed_account": false,
+  "_class": "com.everis.transactionservice.entity.Transaction",
+  "card_num": "2525-2626-2727-2828"
+},{
+  "_id": {
+    "$oid": "60dff972ccb463a23903d52e"
+  },
+  "date_tra": {
+    "$date": "2021-07-01T05:00:00Z"
+  },
+  "type_tra": "Activo",
+  "limit_credit": 0,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Juan",
+    "lastname": "Perez",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "T"
+    }
+  ],
+  "product": {
+    "id_product": "400",
+    "name_product": "Personal",
+    "type_product": "Activo"
+  },
+  "desc_tra": "solicitud de un prestamo personal",
+  "status": 1,
+  "amount_loan": 1000,
+  "closed_account": false,
+  "_class": "com.everis.transactionservice.entity.Transaction",
+  "card_num": null,
+  "creditCod": "10001"
+},{
+  "_id": {
+    "$oid": "60e0a55d1e576662e9997122"
+  },
+  "date_tra": {
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "num_account": "",
+  "type_tra": "Activo",
+  "limit_credit": 1000,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "12345678",
+    "name": "Juan",
+    "lastname": "Perez",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "T"
+    }
+  ],
+  "product": {
+    "id_product": "600",
+    "name_product": "Tarjeta Credito",
+    "type_product": "Activo"
+  },
+  "desc_tra": "solicitud de un prestamo personal",
+  "status": 1,
+  "amount_loan": 0,
+  "closed_account": false,
+  "card_num": "1010-2020-3030-4040",
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60e0c7e81e576662e9997123"
+  },
+  "date_tra": {
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "num_account": "",
+  "type_tra": "Activo",
+  "limit_credit": 1000,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "30303030",
+    "name": "Alexander",
+    "lastname": "Ruiz",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "40404040",
+      "name_rep": "Carlos",
+      "lastname_rep": "Nuevo Nuevo",
+      "type_rep": "T"
+    }
+  ],
+  "product": {
+    "id_product": "400",
+    "name_product": "Personal",
+    "type_product": "Activo"
+  },
+  "desc_tra": "solicitud de un prestamo personal",
+  "status": 1,
+  "amount_loan": 1200,
+  "closed_account": false,
+  "credit_cod": "10002",
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60e0d2541e576662e9997124"
+  },
+  "date_tra": {
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "num_account": "",
+  "type_tra": "Activo",
+  "limit_credit": 1000,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "30303030",
+    "name": "Alexander",
+    "lastname": "Ruiz",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "40404040",
+      "name_rep": "Carlos",
+      "lastname_rep": "Nuevo Nuevo",
+      "type_rep": "T"
+    }
+  ],
+  "product": {
+    "id_product": "600",
+    "name_product": "Tarjeta Credito",
+    "type_product": "Activo"
+  },
+  "desc_tra": "solicitud de un tarjeta de credito",
+  "status": 1,
+  "amount_loan": 0,
+  "closed_account": false,
+  "card_num": "3030-3131-3232-3333",
+  "_class": "com.everis.transactionservice.entity.Transaction"
+},{
+  "_id": {
+    "$oid": "60e0f4de38fe4e212c4c9fc0"
+  },
+  "date_tra": {
+    "$date": "2021-07-03T05:00:00Z"
+  },
+  "num_account": "",
+  "type_tra": "Activo",
+  "limit_credit": 1500,
+  "balance": 0,
+  "out_credit": 0,
+  "customer": {
+    "num_doc": "20202020",
+    "name": "Juan",
+    "lastname": "Zurita",
+    "type_customer": "P"
+  },
+  "representatives": [
+    {
+      "num_doc_rep": "40404040",
+      "name_rep": "Carlos",
+      "lastname_rep": "Nuevo Nuevo",
+      "type_rep": "T"
+    },
+    {
+      "num_doc_rep": "30303030",
+      "name_rep": "Hugo",
+      "lastname_rep": "dias campos",
+      "type_rep": "F"
+    }
+  ],
+  "product": {
+    "id_product": "600",
+    "name_product": "Tarjeta Credito",
+    "type_product": "Activo"
+  },
+  "desc_tra": "solicitud de un tarjeta de credito",
+  "status": 1,
+  "amount_loan": 0,
+  "closed_account": false,
+  "card_num": "3030-3131-3232-3535",
   "_class": "com.everis.transactionservice.entity.Transaction"
 }]

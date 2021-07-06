@@ -30,12 +30,17 @@ public class DebitAssociationServiceImpl implements IDebitAssociationService {
 	@Autowired
 	private IDebitAssociationRepository debitAssociationRepo;
 	
+	
 	private final ReactiveMongoTemplate mongoTemplate;
 
     @Autowired
-    public DebitAssociationServiceImpl(ReactiveMongoTemplate mongoTemplate) {
+    public DebitAssociationServiceImpl(ReactiveMongoTemplate mongoTemplate,IDebitAssociationRepository debitAssociationRepo) {
         this.mongoTemplate = mongoTemplate;
+        this.debitAssociationRepo = debitAssociationRepo;
     }
+    
+    
+    
 	
 	@Override
 	public Flux<DebitAssociation> findAll() {
