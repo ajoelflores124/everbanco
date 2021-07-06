@@ -12,7 +12,91 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \r\n    \"dateTra\": \"2021-06-22T05:00:00.000+00:00\",\r\n    \"numAccount\": \"10000000010\",\r\n    \"typeTra\": \"Pasivo\",\r\n    \"limitCredit\": 0,\r\n    \"balance\": 0,\r\n    \"outCredit\": 0,\r\n    \"customer\": {\r\n        \"numDoc\": \"20303030300\"\r\n    },\r\n    \"product\": {\r\n        \"idProduct\": \"200\"\r\n        \r\n    },\r\n    \"representatives\": \r\n  \t[\r\n        {\r\n            \"numDocRep\": \"30303030\",\r\n            \"typeRep\": \"T\"\r\n        },\r\n        {\r\n            \"numDocRep\": \"31313131\",\r\n            \"typeRep\": \"F\"   \r\n        }\r\n     ]\r\n  \t,\r\n    \"descTra\": \"apertura de cuenta corriente empresarial\",\r\n    \"status\": 1\r\n}",
+					"raw": "{\r\n    \r\n    \"dateTra\": \"2021-07-03T05:00:00.000+00:00\",\r\n    \"numAccount\": \"\",\r\n    \"typeTra\": \"Activo\",\r\n    \"limitCredit\": 1000,\r\n    \"balance\": 0,\r\n    \"outCredit\": 0,\r\n    \"customer\": {\r\n        \"numDoc\": \"30303030\"\r\n    },\r\n    \"product\": {\r\n        \"idProduct\": \"400\"\r\n        \r\n    },\r\n    \"representatives\": \r\n  \t[\r\n        {\r\n            \"numDocRep\": \"40404040\",\r\n            \"typeRep\": \"T\"\r\n        }\r\n       \r\n     ]\r\n  \t,\r\n    \"descTra\": \"solicitud de un prestamo personal\",\r\n    \"status\": 1,\r\n    \"amountLoan\":1200,\r\n    \"datePayNext\": null,\r\n    \"closedAccount\": false,\r\n    \"debtStatus\":null,\r\n    \"cardNum\":null,\r\n    \"creditCod\":\"10002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create transaction debito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"dateTra\": \"2021-06-01T05:00:00.000+00:00\",\r\n    \"numAccount\": \"10000000010\",\r\n    \"typeTra\": \"Activo\",\r\n    \"limitCredit\": 0,\r\n    \"balance\": 0,\r\n    \"outCredit\": 0,\r\n    \"customer\": {\r\n        \"numDoc\": \"10101010\"\r\n    },\r\n    \"product\": {\r\n        \"idProduct\": \"400\"\r\n        \r\n    },\r\n    \"representatives\": \r\n  \t[\r\n        {\r\n            \"numDocRep\": \"30303030\",\r\n            \"typeRep\": \"T\"\r\n        }\r\n       \r\n     ]\r\n  \t,\r\n    \"descTra\": \"solicitud de un prestamo personal\",\r\n    \"status\": 1,\r\n    \"amountLoan\":1200.0,\r\n    \"datePayNext\": \"2021-06-30\",\r\n    \"closedAccount\": false,\r\n    \"debtStatus\":\"vencido\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create transacrtion - deuda pendiente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"dateTra\": \"2021-06-22T05:00:00.000+00:00\",\r\n    \"numAccount\": \"10000000010\",\r\n    \"typeTra\": \"Pasivo\",\r\n    \"limitCredit\": 0,\r\n    \"balance\": 0,\r\n    \"outCredit\": 0,\r\n    \"customer\": {\r\n        \"numDoc\": \"10101010\"\r\n    },\r\n    \"product\": {\r\n        \"idProduct\": \"200\"\r\n        \r\n    },\r\n    \"representatives\": \r\n  \t[\r\n        {\r\n            \"numDocRep\": \"30303030\",\r\n            \"typeRep\": \"T\"\r\n        },\r\n        {\r\n            \"numDocRep\": \"31313131\",\r\n            \"typeRep\": \"F\"   \r\n        }\r\n     ]\r\n  \t,\r\n    \"descTra\": \"apertura de cuenta corriente personal\",\r\n    \"status\": 1,\r\n    \"date_pay_next\": \"2021-07-10\",\r\n    \"closed_account\": false,\r\n    \"debt_status\":\"pendiente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create transaction empresarial",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"dateTra\": \"2021-06-22T05:00:00.000+00:00\",\r\n    \"numAccount\": \"10000000010\",\r\n    \"typeTra\": \"Pasivo\",\r\n    \"limitCredit\": 0,\r\n    \"balance\": 0,\r\n    \"outCredit\": 0,\r\n    \"customer\": {\r\n        \"numDoc\": \"20101010100\"\r\n    },\r\n    \"product\": {\r\n        \"idProduct\": \"200\"\r\n        \r\n    },\r\n    \"representatives\": \r\n  \t[\r\n        {\r\n            \"numDocRep\": \"30303030\",\r\n            \"typeRep\": \"T\"\r\n        },\r\n        {\r\n            \"numDocRep\": \"31313131\",\r\n            \"typeRep\": \"F\"   \r\n        }\r\n     ]\r\n  \t,\r\n    \"descTra\": \"apertura de cuenta corriente empresarial\",\r\n    \"status\": 1,\r\n    \"date_pay_next\": \"2021-07-10\",\r\n    \"closed_account\": false,\r\n    \"debt_status\":\"pendiente\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -35,6 +119,68 @@
 		},
 		{
 			"name": "list trasactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/transaction/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transaction",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "estado cuenta principal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/transaction/balance-main-account/2525-2626-2727-2828",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transaction",
+						"balance-main-account",
+						"2525-2626-2727-2828"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list resume consolidado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/resume/consolid/12345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"resume",
+						"consolid",
+						"12345678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list report product",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -77,6 +223,57 @@
 					"path": [
 						"transaction",
 						"60d0c1f5ee521c258cdd185f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update balance by num account",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/transaction/update-balance/2021-1001/150.0/+",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transaction",
+						"update-balance",
+						"2021-1001",
+						"150.0",
+						"+"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Debit Movement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardNumDebit\":\"2020-3030-4040-1234\",\r\n    \"desMov\":\"pago de tarjeta de credito\",\r\n    \"mountMov\": 100\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/debit_movement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"debit_movement"
 					]
 				}
 			},

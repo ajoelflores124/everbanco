@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "75375867-c84f-4598-89bc-65599c359d5b",
+		"name": "api-gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test-gateway",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/customer-service/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"customer-service",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-gateway Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"name\": \"JUAN CARLOS\",\r\n        \"identityType\": \"DNI\",\r\n        \"identityNumber\": \"10101010\",\r\n        \"customerType\": \"PERSONAL\",\r\n        \"address\": \"PERU\",\r\n        \"phoneNumber\": \"999999999\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/customer-service/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"customer-service",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-product list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"name\": \"JUAN CARLOS\",\r\n        \"identityType\": \"DNI\",\r\n        \"identityNumber\": \"10101010\",\r\n        \"customerType\": \"PERSONAL\",\r\n        \"address\": \"PERU\",\r\n        \"phoneNumber\": \"999999999\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/product-service/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"product-service",
+						"product"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "5b24c42b-eae7-43df-b20a-47a30d5e0c6d",
+		"name": "Debito Movement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list top 10 movement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/debit-mov/list-mov/2525-2626-2727-2828",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"debit-mov",
+						"list-mov",
+						"2525-2626-2727-2828"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
