@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8f1061e6-7be7-4ca2-b3ef-e58311b5a17b",
+		"_postman_id": "b1f69013-f915-427b-99fe-a9f858a9ccec",
 		"name": "movement",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -47,13 +47,71 @@
 			"response": []
 		},
 		{
-			"name": "new Movements",
+			"name": "new Movements Retiro",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"numDoc\": \"10101010\",\r\n        \"description\": \"Ahorro\",\r\n        \"numAccount\": \"9638527419631234\",\r\n        \"amount\": 1000,\r\n        \"date\": \"2021-06-21T05:00:00.000+00:00\",\r\n        \"typeMOV\": \"D\",\r\n        \"status\": 1\r\n    }",
+					"raw": "{\r\n        \"numDoc\": \"12345678\",\r\n        \"description\": \"Ahorro\",\r\n        \"numAccount\": \"2021-1002\",\r\n        \"amount\": 0.50,\r\n        \"date\": \"2021-07-02T05:00:00.000+00:00\",\r\n        \"typeMov\": \"R\",\r\n        \"status\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/movement/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"movement",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new Movements Deposito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"numDoc\": \"12345678\",\r\n        \"description\": \"Ahorro\",\r\n        \"numAccount\": \"2021-1002\",\r\n        \"amount\": 100,\r\n        \"date\": \"2021-07-02T05:00:00.000+00:00\",\r\n        \"typeMov\": \"D\",\r\n        \"status\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/movement/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"movement",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new Movements Retiro Debito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"numDoc\": \"12345678\",\r\n        \"description\": \"Ahorro\",\r\n        \"numAccount\": \"2021-1002\",\r\n        \"amount\": 100,\r\n        \"date\": \"2021-07-02T05:00:00.000+00:00\",\r\n        \"typeMov\": \"D\",\r\n        \"status\": 1\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"

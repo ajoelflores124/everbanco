@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "5dfde69c-2591-478f-bab3-03f8ffc462ad",
+		"name": "Debit Association",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create debit associations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"dateTra\": \"2021-06-01T05:00:00.000+00:00\",\r\n    \"numAccount\": \"10000000010\",\r\n    \"typeTra\": \"Activo\",\r\n    \"limitCredit\": 0,\r\n    \"balance\": 0,\r\n    \"outCredit\": 0,\r\n    \"customer\": {\r\n        \"numDoc\": \"10101010\"\r\n    },\r\n    \"product\": {\r\n        \"idProduct\": \"400\"\r\n        \r\n    },\r\n    \"representatives\": \r\n  \t[\r\n        {\r\n            \"numDocRep\": \"30303030\",\r\n            \"typeRep\": \"T\"\r\n        }\r\n       \r\n     ]\r\n  \t,\r\n    \"descTra\": \"solicitud de un prestamo personal\",\r\n    \"status\": 1,\r\n    \"amountLoan\":1200.0,\r\n    \"datePayNext\": \"2021-06-30\",\r\n    \"closedAccount\": false,\r\n    \"debtStatus\":\"vencido\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lista debit assoc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

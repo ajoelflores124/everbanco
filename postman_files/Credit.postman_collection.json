@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5ef654da-53d1-43a8-af45-e6d5956d8434",
+		"_postman_id": "90748066-d5ff-44af-bda5-8b16a69c2488",
 		"name": "Credit",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8086/credit/numDoc/12354678",
+					"raw": "http://localhost:8086/credit/list-cred-movement/12354678",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -19,7 +19,7 @@
 					"port": "8086",
 					"path": [
 						"credit",
-						"numDoc",
+						"list-cred-movement",
 						"12354678"
 					]
 				}
@@ -33,7 +33,65 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"numDoc\": \"12354678\",\r\n        \"description\": \"Cuota Mes de Julio\",\r\n        \"status\": 1,\r\n        \"amountPay\": 1100,\r\n        \"datePay\": \"2021-06-21T00:00:00.000+00:00\",\r\n        \"numTra\": 1\r\n    }",
+					"raw": "{\r\n        \"numDoc\": \"12354678\",\r\n        \"description\": \"Cuota Mes de Julio\",\r\n        \"status\": 1,\r\n        \"amountPay\": 50,\r\n        \"datePay\": \"2021-07-03T00:00:00.000+00:00\",\r\n        \"creditCod\": 10001\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/credit/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"credit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new Credit Pago Tercero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"numDoc\": \"30303030\",\r\n        \"description\": \"Cuota Mes de Julio\",\r\n        \"status\": 1,\r\n        \"amountPay\": 50.0,\r\n        \"datePay\": \"2021-07-03T00:00:00.000+00:00\",\r\n        \"creditCod\": \"10002\",\r\n        \"debitCardPay\":\"2525-2626-2727-2828\",\r\n        \"numDocPay\":\"12345678\"\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/credit/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"credit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new Pago  - Debito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"numDoc\": \"12354678\",\r\n        \"description\": \"Cuota Mes de Julio pago de un credito personal por debit\",\r\n        \"status\": 1,\r\n        \"amountPay\": 55.0,\r\n        \"datePay\": \"2021-07-03T00:00:00.000+00:00\",\r\n        \"debitCardPay\":\"2525-2626-2727-2828\",\r\n        \"creditCod\":\"10001\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
