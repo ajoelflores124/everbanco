@@ -11,6 +11,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import com.everis.customerservice.entity.Customer;
 import com.everis.customerservice.exception.EntityNotFoundException;
 import com.everis.customerservice.repository.ICustomerRepository;
+import com.everis.customerservice.topic.producer.CustomerServiceProducer;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -34,6 +35,9 @@ public class CustomerServiceImpl implements ICustomerService{
         this.mongoTemplate = mongoTemplate;
     }
 	
+	@Autowired
+	CustomerServiceProducer customerServiceProducer;
+	
 	WebClient webClient = WebClient.create(urlCustomerService);
 	
 	@Override
@@ -48,6 +52,9 @@ public class CustomerServiceImpl implements ICustomerService{
 
 	@Override
 	public Mono<Customer> createEntity(Customer customer) {
+	
+	   	
+	   customerServiceProducer.sendSaveCustomerService(customer);
 	   return customerRep.insert(customer);
 	}
 
