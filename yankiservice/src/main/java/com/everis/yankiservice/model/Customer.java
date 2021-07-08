@@ -1,4 +1,4 @@
-package com.everis.customerservice.entity;
+package com.everis.yankiservice.model;
 
 import java.io.Serializable;
 
@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "customer")
 public class Customer implements Serializable {
 
 	/**
@@ -32,10 +31,10 @@ public class Customer implements Serializable {
     private String email;
     private String address;
     private long status;
-    @Field (name = "type_customer")
+    @Field (name = "type_customer")//usar el redir(Personal, Empresarial, Yanki)
     private String typeCustomer;
     
-    @Field (name = "type_doc")
+    @Field (name = "type_doc")//usar el redir (DNI, CE, Pasaporte) 
     private String typeDoc;
     private String imei;
 }

@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "e72f3a31-54f9-4aa8-b7b2-78c8448fca99",
+		"name": "Yanki",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "new customer yanki",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"numDoc\": \"60606060\",\r\n        \"name\": \"juan\",\r\n        \"lastname\": \"yanki Perez\",\r\n        \"phone\": \"987465123\",\r\n        \"email\": \"jyanki@gmail.com\",\r\n        \"address\": \"av los abcds 123\",\r\n        \"status\": 1,\r\n        \"typeCustomer\": \"Yanki\",\r\n        \"typeDoc\": null,\r\n        \"imei\": \"1234-1234-12345\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8089/customer-yanki",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"customer-yanki"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

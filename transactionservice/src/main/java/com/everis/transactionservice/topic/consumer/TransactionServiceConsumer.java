@@ -10,7 +10,7 @@ import reactor.core.Disposable;
 @Component
 public class TransactionServiceConsumer {
 
-	private final static String CUSTOMER_TOPIC = "customerservice-topic";
+	private final static String CUSTOMER_TOPIC = "yankiservice-topic";
 	private final static String GROUP_ID = "transaction-group";
 	
 	@KafkaListener( topics = CUSTOMER_TOPIC, groupId = GROUP_ID)
