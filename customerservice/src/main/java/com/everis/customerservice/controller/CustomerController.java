@@ -52,4 +52,9 @@ public class CustomerController {
 	public Mono<Customer> getCustomerByNumDoc(@PathVariable String numDoc){
 		return customerService.findByNumDoc(numDoc);
 	}
+	
+	@GetMapping("/find-by-phone/{phone}")
+	public Mono<Customer> getCustomerByPhone(@PathVariable String phone){
+		return customerService.findByPhoneNumDebit(phone);
+	}
 }

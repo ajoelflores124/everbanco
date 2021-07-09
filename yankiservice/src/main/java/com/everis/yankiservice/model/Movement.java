@@ -1,4 +1,4 @@
-package com.everis.movementservice.entity;
+package com.everis.yankiservice.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "movement")
 public class Movement implements Serializable{
 
 	/**

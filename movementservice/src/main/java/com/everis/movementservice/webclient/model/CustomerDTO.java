@@ -1,4 +1,4 @@
-package com.everis.yankiservice.model;
+package com.everis.movementservice.webclient.model;
 
 import java.io.Serializable;
 
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Customer implements Serializable {
+public class CustomerDTO implements Serializable {
 
 	/**
 	 * 
@@ -31,10 +31,12 @@ public class Customer implements Serializable {
     private String email;
     private String address;
     private long status;
-    @Field (name = "type_customer")//usar el redis(Personal, Empresarial, Yanki)
+    @Field (name = "type_customer")
     private String typeCustomer;
     
-    @Field (name = "type_doc")//usar el redis (DNI, CE, Pasaporte) 
+    @Field (name = "type_doc")
     private String typeDoc;
     private String imei;
+    @Field(name = "card_num_debit")
+    private String cardNumDebit;
 }

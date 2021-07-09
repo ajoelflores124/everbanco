@@ -13,17 +13,17 @@ import com.everis.yankiservice.topic.producer.YankiServiceProducer;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/customer-yanki")
-public class CustomerYankiController {
+@RequestMapping("/movement-yanki")
+public class MovementYankiController {
 	
 	@Autowired
 	YankiServiceProducer yankiServiceProducer;
 
 	@PostMapping
-	public Mono<Customer> saveMovementYanki(@RequestBody Customer customer ) {
+	public Mono<Movement> saveCustomerYanki(@RequestBody Movement movement) {
 
-		yankiServiceProducer.sendSaveCustomerService(customer);
-		return Mono.just(customer);
+		yankiServiceProducer.sendSaveMovementService(movement);
+		return Mono.just(movement);
 	}
 	
 }

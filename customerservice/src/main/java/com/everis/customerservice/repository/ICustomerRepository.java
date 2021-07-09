@@ -11,4 +11,5 @@ import reactor.core.publisher.Mono;
 public interface ICustomerRepository extends ReactiveMongoRepository<Customer, String>{
 
 	Mono<Customer> findByNumDoc(String numDoc);
+	
 }

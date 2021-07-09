@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import com.everis.movementservice.webclient.model.CustomerDTO;
+import com.everis.movementservice.webclient.model.DebitAssociationDTO;
 import com.everis.movementservice.webclient.model.DebitMovementDTO;
 import com.everis.movementservice.webclient.model.ResumeDTO;
 import com.everis.movementservice.webclient.model.TransactionDTO;
@@ -40,6 +42,22 @@ public class TransactionServiceClient {
 	    		.retrieve()
 	    		.bodyToFlux(ResumeDTO.class);
 	    		
+	}
+	
+	public Mono<CustomerDTO> getCustomerByPhone(String phone){
+		WebClient webClient = WebClient.create(urlApiGatewayService);
+		return  webClient.get()
+	    		.uri("/api/customer-service/customer/find-by-phone/{phone}",phone)
+	    		.retrieve()
+	    		.bodyToMono(CustomerDTO.class);
+	}
+	
+	public Mono<DebitAssociationDTO> getAccountMainByCardDebit(String cardDebit){
+		WebClient webClient = WebClient.create(urlApiGatewayService);
+		return  webClient.get()
+	    		.uri("/api/transaction-service/debit-assoc/find-account-main/{cardDebit}",cardDebit)
+	    		.retrieve()
+	    		.bodyToMono(DebitAssociationDTO.class);
 	}
 	
 }

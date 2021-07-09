@@ -8,4 +8,5 @@ import reactor.core.publisher.Mono;
 public interface ICustomerService extends IMaintenanceService<Customer> {
 
 	Mono<Customer> findByNumDoc(String numDoc);
+	Mono<Customer> findByPhoneNumDebit(String phone);
 }

@@ -27,6 +27,17 @@ public class YankiServiceTopic {
 	        .build();
 	    
 	}
+	
+	@Bean
+	public NewTopic topicMovement() {
+	  
+	    return TopicBuilder
+	        .name("yanki-movement-topic")
+	        .partitions(1)
+	        .replicas(1)
+	        .build();
+	    
+	}
 	 
 	@Bean
 	public ProducerFactory<String, Object> producerFactory() {

@@ -27,7 +27,7 @@ public class CustomerServiceConsumer {
 	
 	@KafkaListener( topics = YANKI_TOPIC, groupId = GROUP_ID)
 	public Disposable retrieveSavedCustomer(String data) throws Exception {
-		log.info("data desde kafka listener (customer)=>"+data);
+		log.info("data desde kafka listener (customer) =>"+data);
 		Customer customer= objectMapper.readValue(data, Customer.class );
 		 
 		return Mono.just(customer)

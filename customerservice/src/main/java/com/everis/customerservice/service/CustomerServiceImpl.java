@@ -1,9 +1,13 @@
 package com.everis.customerservice.service;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -12,6 +16,7 @@ import com.everis.customerservice.entity.Customer;
 import com.everis.customerservice.exception.EntityNotFoundException;
 import com.everis.customerservice.repository.ICustomerRepository;
 import com.everis.customerservice.topic.producer.CustomerServiceProducer;
+
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -78,6 +83,15 @@ public class CustomerServiceImpl implements ICustomerService{
 				.switchIfEmpty(Mono.error(new EntityNotFoundException(msgNotFound)) );
 				 
 				 
+	}
+
+	@Override
+	public Mono<Customer> findByPhoneNumDebit(String phone) {
+		Query query= new Query().addCriteria( Criteria.where("cardNumDebit").ne(null).andOperator(
+				Criteria.where("phone").is(phone),
+				Criteria.where("typeCustomer").is("Yanki")
+				));
+		return mongoTemplate.findOne(query,Customer.class);
 	}
 
 }
