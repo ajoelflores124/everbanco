@@ -38,4 +38,6 @@ public class Customer implements Serializable {
     @Field (name = "type_doc")
     private String typeDoc;
     private String imei;
+    @Field(name = "card_num_debit")
+    private String cardNumDebit;
 }
