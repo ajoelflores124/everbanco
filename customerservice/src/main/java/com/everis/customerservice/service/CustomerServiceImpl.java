@@ -87,10 +87,15 @@ public class CustomerServiceImpl implements ICustomerService{
 
 	@Override
 	public Mono<Customer> findByPhoneNumDebit(String phone) {
-		Query query= new Query().addCriteria( Criteria.where("cardNumDebit").ne(null).andOperator(
-				Criteria.where("phone").is(phone),
-				Criteria.where("typeCustomer").is("Yanki")
-				));
+		Query query= new Query(Criteria.where("cardNumDebit").ne(null)
+				.andOperator(
+						Criteria.where("phone").is(phone),
+						new Criteria().orOperator(
+								Criteria.where("typeCustomer").is("Yanki"),
+								Criteria.where("typeCustomer").is("Y")
+								)
+						)
+				);
 		return mongoTemplate.findOne(query,Customer.class);
 	}
 
